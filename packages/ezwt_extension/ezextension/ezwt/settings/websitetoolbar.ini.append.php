@@ -31,6 +31,7 @@ HiddenContentClasses[]=common_ini_settings
 # NOTE: do not use .tpl extension in the setting value
 # CustomTemplateList[]=customtemplateexample
 CustomTemplateList[]=object_states
+CustomTemplateList[]=link
 
 # Website Toolbar is available for 3 views: full, edit and versionview
 # This setting indicates where custom templates should be included
@@ -41,5 +42,5 @@ IncludeInView[]
 # in the full, edit, and versionview views
 # IncludeInView[customtemplateexample]=full;edit;versionview
 IncludeInView[object_states]=full
-
+IncludeInView[link]=full
 */ ?>

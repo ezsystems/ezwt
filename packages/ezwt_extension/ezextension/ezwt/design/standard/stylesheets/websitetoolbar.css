@@ -149,6 +149,11 @@ div#ezwt-help a
     display: block;
 }
 
+table#ezwt-sort-list tr.ezwt-sort-drag-handler
+{
+    cursor: move;
+}
+
 
 /* General styles */
 

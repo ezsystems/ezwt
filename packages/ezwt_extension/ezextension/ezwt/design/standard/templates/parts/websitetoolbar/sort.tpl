@@ -1,18 +1,23 @@
 {set scope=global persistent_variable=hash('left_menu', false(),
                                            'extra_menu', false(),
                                            'show_path', true())}
+{ezscript( array('ezjsc::yui3', 'ezwtsortdd.js') )}
+<script type="text/javascript">
+eZWTSortDD.init();
+</script>
 
 <div class="border-box">
 <div class="border-tl"><div class="border-tr"><div class="border-tc"></div></div></div>
 <div class="border-ml"><div class="border-mr"><div class="border-mc float-break">
 
-<form name="children" method="post" action={'content/action'|ezurl}>
+<form id="ezwt-sort-form" method="post" action={'content/action'|ezurl}>
 <input type="hidden" name="ContentNodeID" value="{$node.node_id}" />
 
 {def $item_type = ezpreference( 'user_list_limit' )
      $priority_sorting = $node.sort_array[0][0]|eq( 'priority' )
      $node_can_edit = $node.can_edit
      $node_name     = $node.name
+     $can_remove    = false()
      $number_of_items = min( $item_type, 3)|choose( 10, 10, 25, 50 )
      $children_count = fetch( content, list_count, hash( parent_node_id, $node.node_id,
                                                       objectname_filter, $view_parameters.namefilter ) )
@@ -51,45 +56,36 @@
 
 </div>
 
-<table class="list" cellspacing="0">
+<table id="ezwt-sort-list" class="list" cellspacing="0">
     <tr>
-        {* Priority column *}
-        {if $priority_sorting}
-            <th class="priority">{'Priority'|i18n( 'design/standard/websitetoolbar/sort' )}</th>
-        {/if}
-
+        <th class="tight"></th>
         {* Name column *}
         <th class="name">{'Name'|i18n( 'design/standard/websitetoolbar/sort' )}</th>
 
         {* Class type column *}
         <th class="class">{'Type'|i18n( 'design/standard/websitetoolbar/sort' )}</th>
 
-        {* Modifier column *}
-        <th class="modifier">{'Modifier'|i18n( 'design/standard/websitetoolbar/sort' )}</th>
-
-        {* Modified column *}
-        <th class="modified">{'Modified'|i18n( 'design/standard/websitetoolbar/sort' )}</th>
-
-        {* Section column *}
-        <th class="section">{'Section'|i18n( 'design/standard/websitetoolbar/sort' )}</th>
+        {* Priority column *}
+        {if $priority_sorting}
+            <th class="priority">{'Priority'|i18n( 'design/standard/websitetoolbar/sort' )}</th>
+        {/if}
     </tr>
 
     {foreach $children as $child sequence array( 'bglight', 'bgdark' ) as $sequence_style}
+    {if $child.can_remove}
+        {set $can_remove = true()}
+    {/if}
     {def $section_object = fetch( 'section', 'object', hash( 'section_id', $child.object.section_id ) )}
 
-        <tr class="{$sequence_style}">
+        <tr class="{$sequence_style} ezwt-sort-drag-handler">
 
-        {* Priority *}
-        {if $priority_sorting}
             <td>
-            {if node_can_edit}
-                <input class="priority" type="text" name="Priority[]" size="3" value="{$child.priority}" title="{'Use the priority fields to control the order in which the items appear. You can use both positive and negative integers. Click the "Update priorities" button to apply the changes.'|i18n( 'design/standard/websitetoolbar/sort' )|wash}" />
-                <input type="hidden" name="PriorityID[]" value="{$child.node_id}" />
-            {else}
-                <input class="priority" type="text" name="Priority[]" size="3" value="{$child.priority}" title="{'You are not allowed to update the priorities because you do not have permission to edit <%node_name>.'|i18n( 'design/standard/websitetoolbar/sort',, hash( '%node_name', $node_name ) )|wash}" disabled="disabled" />
+            {if $child.can_remove}
+                <input type="checkbox" name="DeleteIDArray[]" value="{$child.node_id}" title="{'Use these checkboxes to select items for removal. Click the "Remove selected" button to  remove the selected items.'|i18n( 'design/standard/websitetoolbar/sort' )|wash()}" />
+                {else}
+                <input type="checkbox" name="DeleteIDArray[]" value="{$child.node_id}" title="{'You do not have permission to remove this item.'|i18n( 'design/standard/websitetoolbar/sort' )}" disabled="disabled" />
             {/if}
             </td>
-        {/if}
 
         {* Name *}
         <td>{$child.name|wash}</td>
@@ -97,15 +93,17 @@
         {* Class type *}
         <td class="class">{$child.class_name|wash}</td>
 
-        {* Modifier *}
-        <td class="modifier">{$child.object.current.creator.name|wash}</td>
-
-        {* Modified *}
-        <td class="modified">{$child.object.modified|l10n( shortdatetime )}</td>
-
-        {* Section *}
-        <td>{if $section_object}{$section_object.name|wash}{else}<i>{'Unknown'|i18n( 'design/standard/websitetoolbar/sort' )}</i>{/if}</td>
-
+        {* Priority *}
+        {if $priority_sorting}
+            <td>
+            {if node_can_edit}
+                <input class="priority ezwt-priority-input" type="text" name="Priority[]" size="3" value="{$child.priority}" title="{'Use the priority fields to control the order in which the items appear. You can use both positive and negative integers. Click the "Update priorities" button to apply the changes.'|i18n( 'design/standard/websitetoolbar/sort' )|wash}" />
+                <input type="hidden" name="PriorityID[]" value="{$child.node_id}" />
+            {else}
+                <input class="priority ezwt-priority-input" type="text" name="Priority[]" size="3" value="{$child.priority}" title="{'You are not allowed to update the priorities because you do not have permission to edit <%node_name>.'|i18n( 'design/standard/websitetoolbar/sort',, hash( '%node_name', $node_name ) )|wash}" disabled="disabled" />
+            {/if}
+            </td>
+        {/if}
       </tr>
     {undef $section_object}
     {/foreach}
@@ -135,11 +133,17 @@
 
     {* Update priorities button *}
     <div class="left">
-    {if and( $priority_sorting, $node_can_edit, $children_count )}
-        <input class="button" type="submit" name="UpdatePriorityButton" value="{'Update priorities'|i18n( 'design/standard/websitetoolbar/sort' )}" title="{'Apply changes to the priorities of the items in the list above.'|i18n( 'design/standard/websitetoolbar/sort' )}" />
-        <input type="hidden" name="RedirectURIAfterPriority" value="websitetoolbar/sort/{$node.node_id}" />
+    {if $can_remove}
+        <input class="button" type="submit" name="RemoveButton" value="{'Remove selected'|i18n( 'design/admin/node/view/full' )}" title="{'Remove the selected items from the list above.'|i18n( 'design/standard/websitetoolbar/sort' )}" />
     {else}
-        <input class="button-disabled" type="submit" name="UpdatePriorityButton" value="{'Update priorities'|i18n( 'design/standard/websitetoolbar/sort' )}" title="{'You cannot update the priorities because you do not have permission to edit the current item or because a non-priority sorting method is used.'|i18n( 'design/standard/websitetoolbar/sort' )}" disabled="disabled" />
+        <input class="button-disabled" type="submit" name="RemoveButton" value="{'Remove selected'|i18n( 'design/admin/node/view/full' )}" title="{'You do not have permission to remove any of the items from the list above.'|i18n( 'design/standard/websitetoolbar/sort' )}" disabled="disabled" />
+    {/if}
+    {if and( $priority_sorting, $node_can_edit, $children_count )}
+        <input id="ezwt-update-priority" class="button" type="submit" name="UpdatePriorityButton" value="{'Update priorities'|i18n( 'design/standard/websitetoolbar/sort' )}" title="{'Apply changes to the priorities of the items in the list above.'|i18n( 'design/standard/websitetoolbar/sort' )}" />
+        <input type="hidden" name="RedirectURIAfterPriority" value="websitetoolbar/sort/{$node.node_id}" />
+        {'Automaitc update'|i18n( 'design/standard/websitetoolbar/sort' )} <input id="ezwt-automatic-update" type="checkbox" name="AutomaticUpdate" value="" /> 
+    {else}
+        <input id="ezwt-update-priority" class="button-disabled" type="submit" name="UpdatePriorityButton" value="{'Update priorities'|i18n( 'design/standard/websitetoolbar/sort' )}" title="{'You cannot update the priorities because you do not have permission to edit the current item or because a non-priority sorting method is used.'|i18n( 'design/standard/websitetoolbar/sort' )}" disabled="disabled" />
     {/if}
     </div>
 
@@ -165,17 +169,21 @@
         <input type="hidden" name="RedirectURIAfterSorting" value="websitetoolbar/sort/{$node.node_id}" />
     {/if}
     
-    <select name="SortingField" title="{$title}"{$disabled}>
+    <select id="ezwt-sort-field" name="SortingField" title="{$title}"{$disabled}>
     {foreach $sort_fields as $sort_index => $sort}
         <option value="{$sort_index}" {if eq( $sort_index, $node.sort_field )}selected="selected"{/if}>{$sort}</option>
     {/foreach}
     </select>
     
-    <select name="SortingOrder" title="{$title}"{$disabled}>
+    <select id="ezwt-sort-order" name="SortingOrder" title="{$title}"{if $disabled}{$disabled}{else}{if $priority_sorting} disabled="disabled"{/if}>
         <option value="0"{if eq($node.sort_order, 0)} selected="selected"{/if}>{'Descending'|i18n( 'design/standard/websitetoolbar/sort' )}</option>
         <option value="1"{if eq($node.sort_order, 1)} selected="selected"{/if}>{'Ascending'|i18n( 'design/standard/websitetoolbar/sort' )}</option>
     </select>
     
+    {if $priority_sorting}
+        <input id="ezwt-sort-order-asc" type="hidden" name="SortingOrder" value="1" />
+    {/if}
+        
     <input {if $disabled}class="button-disabled"{else}class="button"{/if} type="submit" name="SetSorting" value="{'Set'|i18n( 'design/standard/websitetoolbar/sort' )}" title="{$title}" {$disabled} />
     
     {undef $sort_fields $title $disabled}
