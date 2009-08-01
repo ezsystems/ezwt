@@ -88,7 +88,7 @@ var eZWTSortDD = function() {
             });
             
             if(Y.get('#ezwt-automatic-update').get('checked')) {
-                Y.io.ez('ezflow::updatepriority', {on: {success: ioCallback}, form: { id: 'ezwt-sort-form', upload: false }, method: 'POST'});
+                Y.io.ez('ezwt::updatepriority', {on: {success: ioCallback}, form: { id: 'ezwt-sort-form', upload: false }, method: 'POST'});
             }
         });
 
