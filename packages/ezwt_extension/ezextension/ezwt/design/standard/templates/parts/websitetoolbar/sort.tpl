@@ -1,7 +1,7 @@
 {set scope=global persistent_variable=hash('left_menu', false(),
                                            'extra_menu', false(),
                                            'show_path', true())}
-{ezscript( array('ezjsc::yui3', 'ezwtsortdd.js') )}
+{ezscript_require( array( 'ezjsc::yui3', 'ezjsc::yui3io', 'ezwtsortdd.js' ) )}
 <script type="text/javascript">
 eZWTSortDD.init();
 </script>
