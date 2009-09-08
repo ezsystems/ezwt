@@ -1,11 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS>
+<TS version="2.0" language="de_DE" sourcelanguage="en">
+<context>
+    <name>design/admin/node/view/full</name>
+    <message>
+        <source>Remove selected</source>
+        <translation>Ausgewähltes entfernen</translation>
+    </message>
+</context>
 <context>
     <name>design/standard/content/edit</name>
     <message>
         <source>Send for publishing</source>
-        <translation>Zur Veröffentlichung</translation>
+        <translation>Zur Veröffentlichung schicken</translation>
     </message>
     <message>
         <source>Manage versions</source>
@@ -67,7 +74,7 @@
     </message>
     <message>
         <source>Sorting</source>
-        <translation type="unfinished"></translation>
+        <translation>Sortierung</translation>
     </message>
     <message>
         <source>Replace</source>
@@ -91,6 +98,10 @@
     </message>
     <message>
         <source>Edit object states</source>
+        <translation>Objekt Zustände bearbeiten</translation>
+    </message>
+    <message>
+        <source>Toggle menu link type edit.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -98,23 +109,23 @@
     <name>design/standard/websitetoolbar/sort</name>
     <message>
         <source>Sub items [%children_count]</source>
-        <translation type="unfinished"></translation>
+        <translation>Untereinträge [%children_count]</translation>
     </message>
     <message>
         <source>Show 10 items per page.</source>
-        <translation type="unfinished"></translation>
+        <translation>10 Einträge pro Seite anzeigen.</translation>
     </message>
     <message>
         <source>Show 50 items per page.</source>
-        <translation type="unfinished"></translation>
+        <translation>50 Einträge pro Seite anzeigen.</translation>
     </message>
     <message>
         <source>Show 25 items per page.</source>
-        <translation type="unfinished"></translation>
+        <translation>25 Einträge pro Seite anzeigen.</translation>
     </message>
     <message>
         <source>Priority</source>
-        <translation type="unfinished"></translation>
+        <translation>Priorität</translation>
     </message>
     <message>
         <source>Name</source>
@@ -122,11 +133,7 @@
     </message>
     <message>
         <source>Type</source>
-        <translation>Art</translation>
-    </message>
-    <message>
-        <source>Modifier</source>
-        <translation type="unfinished"></translation>
+        <translation>Typ</translation>
     </message>
     <message>
         <source>Modified</source>
@@ -137,48 +144,48 @@
         <translation>Sektion</translation>
     </message>
     <message>
-        <source>Use the priority fields to control the order in which the items appear. You can use both positive and negative integers. Click the "Update priorities" button to apply the changes.</source>
-        <translation type="unfinished"></translation>
+        <source>Use the priority fields to control the order in which the items appear. You can use both positive and negative integers. Click the &quot;Update priorities&quot; button to apply the changes.</source>
+        <translation>Benutzen Sie die Prioritätsfelder, um die Reihenfolge zu ändern, in der die Elemnte erscheinen. Benutzen Sie posititve und negative Ganzzahlen. Klicken Sie auf &quot;Prioritäten speichern&quot;, um die Änderungen zu speichern.</translation>
     </message>
     <message>
         <source>You are not allowed to update the priorities because you do not have permission to edit &lt;%node_name&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie dürfen die aktuellen Prioritäten nicht ändern, weil Sie keine Rechte besitzen  &lt;%node_name&gt; zu bearbeiten.</translation>
     </message>
     <message>
         <source>Unknown</source>
-        <translation>Unbekannt</translation>
+        <translation type="obsolete">Unbekannt</translation>
     </message>
     <message>
         <source>The current item does not contain any sub items.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der aktuelle Eintrag hat keine untergeordneten Einträge.</translation>
     </message>
     <message>
         <source>Update priorities</source>
-        <translation type="unfinished"></translation>
+        <translation>Prioritäten speichern</translation>
     </message>
     <message>
         <source>Apply changes to the priorities of the items in the list above.</source>
-        <translation type="unfinished"></translation>
+        <translation>Änderungen der Prioritäten der Einträge in der obigen Liste speichern.</translation>
     </message>
     <message>
         <source>You cannot update the priorities because you do not have permission to edit the current item or because a non-priority sorting method is used.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie können die Prioritäten nicht aktualisieren, da Sie nicht die notwendigen Rechte besitzen, das aktuelle Element zu bearbeiten oder weil eine andere Sortiermethode verwendet wird.</translation>
     </message>
     <message>
         <source>Sorting</source>
-        <translation type="unfinished"></translation>
+        <translation>Sortierung</translation>
     </message>
     <message>
         <source>Class identifier</source>
-        <translation type="unfinished"></translation>
+        <translation>Klassen Bezeichner</translation>
     </message>
     <message>
         <source>Class name</source>
-        <translation type="unfinished"></translation>
+        <translation>Klassenname</translation>
     </message>
     <message>
         <source>Depth</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiefe</translation>
     </message>
     <message>
         <source>Published</source>
@@ -186,27 +193,47 @@
     </message>
     <message>
         <source>You cannot set the sorting method for the current location because you do not have permission to edit the current item.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie können die Sortierungsmethode für den aktuellen Ort nicht ändern, weil Sie keine Rechte haben, das aktuelle Element zu bearbeiten.</translation>
     </message>
     <message>
         <source>Use these controls to set the sorting method for the sub items of the current location.</source>
-        <translation type="unfinished"></translation>
+        <translation>Benutzen Sie diese Schaltfläche, um die Sortiermethode für die Unterelemente des aktuellen Orts einzustellen.</translation>
     </message>
     <message>
         <source>Descending</source>
-        <translation>Aufsteigend</translation>
-    </message>
-    <message>
-        <source>Ascending</source>
         <translation>Absteigend</translation>
     </message>
     <message>
+        <source>Ascending</source>
+        <translation>Aufsteigend</translation>
+    </message>
+    <message>
         <source>Set</source>
-        <translation type="unfinished"></translation>
+        <translation>Setzen</translation>
     </message>
     <message>
         <source>Invalid or missing parameter: %parameter</source>
-        <translation type="unfinished"></translation>
+        <translation>Parameter fehlt oder ist ungültig: %parameter</translation>
+    </message>
+    <message>
+        <source>Use these checkboxes to select items for removal. Click the &quot;Remove selected&quot; button to  remove the selected items.</source>
+        <translation>Benutzen Sie die Kontrollkästchen, um Elemente zu markieren, die Sie löschen möchten. Klicken Sie danach auf die Schaltfläche &quot;Ausgewähltes entfernen&quot;.</translation>
+    </message>
+    <message>
+        <source>You do not have permission to remove this item.</source>
+        <translation>Sie besitzen nicht die notwendigen Rechte, um dieses Element zu entfernen.</translation>
+    </message>
+    <message>
+        <source>Remove the selected items from the list above.</source>
+        <translation>Die ausgewählten Elemente von obiger Liste entfernen.</translation>
+    </message>
+    <message>
+        <source>You do not have permission to remove any of the items from the list above.</source>
+        <translation>Sie haben nicht die erforderlichen Rechte, die Elemente von obiger Liste zu entfernen.</translation>
+    </message>
+    <message>
+        <source>Automaitc update</source>
+        <translation>Automatisches Update</translation>
     </message>
 </context>
 </TS>
