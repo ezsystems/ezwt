@@ -2,10 +2,9 @@
                                            'extra_menu', false(),
                                            'show_path', true())}
 {ezscript_require( array( 'ezjsc::yui3', 'ezjsc::yui3io', 'ezwtsortdd.js' ) )}
-<script type="text/javascript">
-eZWTSortDD.init();
-</script>
-
+{*
+  Drag and drop script inited in the bottom of this template!
+*}
 <div class="border-box">
 <div class="border-tl"><div class="border-tr"><div class="border-tc"></div></div></div>
 <div class="border-ml"><div class="border-mr"><div class="border-mc float-break">
@@ -77,7 +76,7 @@ eZWTSortDD.init();
     {/if}
     {def $section_object = fetch( 'section', 'object', hash( 'section_id', $child.object.section_id ) )}
 
-        <tr class="{$sequence_style} ezwt-sort-drag-handler">
+        <tr class="{$sequence_style} ezwt-sort-dragable">
 
             <td>
             {if $child.can_remove}
@@ -120,11 +119,11 @@ eZWTSortDD.init();
 <div class="context-toolbar">
 {include name=navigator
          uri='design:navigator/alphabetical.tpl'
-         page_uri=$node.url_alias
-         item_count=$children_count
-         view_parameters=$view_parameters
-         node_id=$node.node_id
-         item_limit=$number_of_items}
+         page_uri = concat( '/websitetoolbar/sort/', $node.node_id )
+         item_count = $children_count
+         view_parameters = $view_parameters
+         node_id = $node.node_id
+         item_limit = $number_of_items}
 </div>
 
 <div class="controlbar">
@@ -141,9 +140,10 @@ eZWTSortDD.init();
     {if and( $priority_sorting, $node_can_edit, $children_count )}
         <input id="ezwt-update-priority" class="button" type="submit" name="UpdatePriorityButton" value="{'Update priorities'|i18n( 'design/standard/websitetoolbar/sort' )}" title="{'Apply changes to the priorities of the items in the list above.'|i18n( 'design/standard/websitetoolbar/sort' )}" />
         <input type="hidden" name="RedirectURIAfterPriority" value="websitetoolbar/sort/{$node.node_id}" />
-        {'Automaitc update'|i18n( 'design/standard/websitetoolbar/sort' )} <input id="ezwt-automatic-update" type="checkbox" name="AutomaticUpdate" value="" /> 
+        <span id="ezwt-automatic-update-container">{'Automaitc update'|i18n( 'design/standard/websitetoolbar/sort' )} <input id="ezwt-automatic-update" type="checkbox" name="AutomaticUpdate" value="" /></span>
     {else}
         <input id="ezwt-update-priority" class="button-disabled" type="submit" name="UpdatePriorityButton" value="{'Update priorities'|i18n( 'design/standard/websitetoolbar/sort' )}" title="{'You cannot update the priorities because you do not have permission to edit the current item or because a non-priority sorting method is used.'|i18n( 'design/standard/websitetoolbar/sort' )}" disabled="disabled" />
+        <span id="ezwt-automatic-update-container" class="hide">{'Automaitc update'|i18n( 'design/standard/websitetoolbar/sort' )} <input id="ezwt-automatic-update" type="checkbox" name="AutomaticUpdate" value="" /></span> 
     {/if}
     </div>
 
@@ -202,3 +202,9 @@ eZWTSortDD.init();
 </div></div></div>
 <div class="border-bl"><div class="border-br"><div class="border-bc"></div></div></div>
 </div>
+
+<script type="text/javascript">
+
+eZWTSortDD.init();
+
+</script>
