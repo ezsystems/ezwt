@@ -175,14 +175,10 @@
     {/foreach}
     </select>
     
-    <select id="ezwt-sort-order" name="SortingOrder" title="{$title}"{if $disabled}{$disabled}{else}{if $priority_sorting} disabled="disabled"{/if}>
+    <select id="ezwt-sort-order" name="SortingOrder" title="{$title}"{$disabled}>
         <option value="0"{if eq($node.sort_order, 0)} selected="selected"{/if}>{'Descending'|i18n( 'design/standard/websitetoolbar/sort' )}</option>
         <option value="1"{if eq($node.sort_order, 1)} selected="selected"{/if}>{'Ascending'|i18n( 'design/standard/websitetoolbar/sort' )}</option>
     </select>
-    
-    {if $priority_sorting}
-        <input id="ezwt-sort-order-asc" type="hidden" name="SortingOrder" value="1" />
-    {/if}
         
     <input {if $disabled}class="button-disabled"{else}class="button"{/if} type="submit" name="SetSorting" value="{'Set'|i18n( 'design/standard/websitetoolbar/sort' )}" title="{$title}" {$disabled} />
     

@@ -1,6 +1,7 @@
 var eZWTSortDD = function() {
     var ret = {};
-    
+
+    ret.sort_order = 1;
     ret.enabled = false;
     ret.CONFIG = {};
     
@@ -12,33 +13,19 @@ var eZWTSortDD = function() {
 
             if( select.get('options').item(selectedIndex).get('value') == 8 )
             {
-                Y.get('#ezwt-sort-order').set('disabled', true);
-
                 if ( ret.enabled )
                 {
                     Y.get('#ezwt-automatic-update-container').removeClass('hide');
                     if ( !Y.get('#ezwt-automatic-update').get('checked') )
                         Y.get('#ezwt-update-priority').set('disabled', false).replaceClass('button-disabled', 'button');
                 }
-
-                if( Y.get('#ezwt-sort-order-asc') === null )
-                {
-                    select.get('parentNode').appendChild( Y.Node.create('<input id="ezwt-sort-order-asc" type="hidden" name="SortingOrder" value="1" />') );
-                }
             }
             else
             {
-                Y.get('#ezwt-sort-order').set('disabled', false);
-
                 if ( ret.enabled )
                 {
                     Y.get('#ezwt-automatic-update-container').addClass('hide');
                     Y.get('#ezwt-update-priority').set('disabled', true).replaceClass('button', 'button-disabled');
-                }
-
-                if(Y.get('#ezwt-sort-order-asc') !== null)
-                {
-                    select.get('parentNode').removeChild(Y.get('#ezwt-sort-order-asc'));
                 }
             }
         });
@@ -108,21 +95,45 @@ var eZWTSortDD = function() {
 
         Y.DD.DDM.on('drag:end', function(e)
         {
-            var drag = e.target;
+            var drag = e.target, dragPriority = drag.get('node').one('input.ezwt-priority-input');
 
             drag.get('node').setStyles({
                 visibility: '',
                 opacity: '1'
             });
-            
-            var priority = 0;
-            Y.all('#ezwt-sort-list input.ezwt-priority-input').each(function(i, v)
+
+            var autoUpdate = Y.get('#ezwt-automatic-update').get('checked');
+
+            if ( autoUpdate )
+            	var sortOrder = Y.get('#ezwt-sort-order').get('value') === '1';
+            else
+            	var sortOrder = ret.sort_order;
+
+            // sortOrder: desc: 0, asc: 1
+            // updateToIndex: set priority on all nodes up until this index
+            var priority = sortOrder ? -990 : 990, updateToIndex = 0, inputs = Y.all('#ezwt-sort-list input.ezwt-priority-input');
+            inputs.each(function(node, i)
             {
-                i.set('value', priority);
-                priority += 10;
+                // Only set priority on nodes up until last node with priority
+            	if ( node.get('value') !== '0' )
+                	updateToIndex = i;
+            	// Or up until dragged node
+            	else if ( node.compareTo( dragPriority ) )
+                	updateToIndex = i;
+            });
+            inputs.each(function(node, i)
+            {
+                if ( i > updateToIndex )
+                	return;
+
+            	node.set('value', priority);
+                if ( sortOrder )
+                    priority += 10;
+                else
+                	priority -= 10;
             });
             
-            if( Y.get('#ezwt-automatic-update').get('checked') )
+            if( autoUpdate )
             {
                 Y.io.ez('ezwt::updatepriority', {on: {success: ioCallback}, form: { id: 'ezwt-sort-form', upload: false }, method: 'POST'});
             }
@@ -167,6 +178,7 @@ var eZWTSortDD = function() {
         if ( document.getElementById('ezwt-sort-field').value == 8 )
         {
             YUI(YUI3_config).use('node', 'io-ez', 'io-form', 'dd-constrain', 'dd-proxy', 'dd-drop', yCallback );
+            ret.sort_order = document.getElementById('ezwt-sort-order').value === '1';
             ret.enabled = true;
         }
         else
