@@ -1,0 +1,6 @@
+<?php /*
+
+[TemplateSettings]
+ExtensionAutoloadPath[]=ezwt
+
+*/ ?>
