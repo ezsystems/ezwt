@@ -5,5 +5,8 @@ Changes from 1.1-0 to 1.1-1
 - Fixed bug #15861: Several bugs in websitetoolbar/sort
   (Merged from trunk rev. 20)
 
+- Fixed bug #15729: JS Error in websitetoolbar link button if YUI doesn't load + empty page if clicked before page load
+  (Merged from trunk rev. 26)
+
 *Enhancements*
 
