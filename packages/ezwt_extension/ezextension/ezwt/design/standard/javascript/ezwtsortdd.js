@@ -29,6 +29,11 @@ var eZWTSortDD = function() {
                 }
             }
         });
+        Y.all('#ezwt-sort-list input.ezwt-priority-input').on('change', function( e )
+        {
+        	// signal in gui that user needs to save this
+        	Y.get('#ezwt-update-priority').replaceClass('button', 'defaultbutton');
+        });
     };
     
     var yCallback = function(Y)
@@ -101,6 +106,8 @@ var eZWTSortDD = function() {
                 visibility: '',
                 opacity: '1'
             });
+            
+            // TODO: Exit if order has not changed (draged by mistake for instance) to not set priority when not needed
 
             var autoUpdate = Y.get('#ezwt-automatic-update').get('checked');
 
@@ -111,7 +118,7 @@ var eZWTSortDD = function() {
 
             // sortOrder: desc: 0, asc: 1
             // updateToIndex: set priority on all nodes up until this index
-            var priority = sortOrder ? -990 : 990, updateToIndex = 0, inputs = Y.all('#ezwt-sort-list input.ezwt-priority-input');
+            var priority = sortOrder ? -2 : 2, updateToIndex = 0, inputs = Y.all('#ezwt-sort-list input.ezwt-priority-input');
             inputs.each(function(node, i)
             {
                 // Only set priority on nodes up until last node with priority
@@ -121,6 +128,7 @@ var eZWTSortDD = function() {
             	else if ( node.compareTo( dragPriority ) )
                 	updateToIndex = i;
             });
+            priority = priority * ( updateToIndex + 1 );
             inputs.each(function(node, i)
             {
                 if ( i > updateToIndex )
@@ -128,14 +136,19 @@ var eZWTSortDD = function() {
 
             	node.set('value', priority);
                 if ( sortOrder )
-                    priority += 10;
+                    priority += 2;
                 else
-                	priority -= 10;
+                	priority -= 2;
             });
             
             if( autoUpdate )
             {
                 Y.io.ez('ezwt::updatepriority', {on: {success: ioCallback}, form: { id: 'ezwt-sort-form', upload: false }, method: 'POST'});
+            }
+            else
+            {
+            	// signal in gui that user needs to save this
+            	Y.get('#ezwt-update-priority').replaceClass('button', 'defaultbutton');
             }
         });
 
