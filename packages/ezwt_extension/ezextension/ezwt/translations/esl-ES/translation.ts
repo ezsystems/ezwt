@@ -1,6 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE TS>
-<TS>
+<!DOCTYPE TS><TS>
+<context>
+    <name>design/admin/node/view/full</name>
+    <message>
+        <source>Remove selected</source>
+        <translation>Eliminar seleccionados</translation>
+    </message>
+</context>
 <context>
     <name>design/standard/content/edit</name>
     <message>
@@ -93,6 +98,10 @@
         <source>Edit object states</source>
         <translation>Editar estado del objeto</translation>
     </message>
+    <message>
+        <source>Toggle menu link type edit.</source>
+        <translation>Alternar menú de edición de tipos de enlace.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/websitetoolbar/sort</name>
@@ -126,7 +135,7 @@
     </message>
     <message>
         <source>Modifier</source>
-        <translation>Modificador</translation>
+        <translation type="obsolete">Modificador</translation>
     </message>
     <message>
         <source>Modified</source>
@@ -137,8 +146,8 @@
         <translation>Sección</translation>
     </message>
     <message>
-        <source>Use the priority fields to control the order in which the items appear. You can use both positive and negative integers. Click the "Update priorities" button to apply the changes.</source>
-        <translation>Utiliza los campos de prioridad para controlar el orden en el que aparecen los elementos. Puede usar números enteros positivos y negativos. Persiona el botón "Actualizar prioridades" para aplicar los cambios.</translation>
+        <source>Use the priority fields to control the order in which the items appear. You can use both positive and negative integers. Click the &quot;Update priorities&quot; button to apply the changes.</source>
+        <translation>Utiliza los campos de prioridad para controlar el orden en el que aparecen los elementos. Puede usar números enteros positivos y negativos. Persiona el botón &quot;Actualizar prioridades&quot; para aplicar los cambios.</translation>
     </message>
     <message>
         <source>You are not allowed to update the priorities because you do not have permission to edit &lt;%node_name&gt;.</source>
@@ -146,7 +155,7 @@
     </message>
     <message>
         <source>Unknown</source>
-        <translation>Desconocido</translation>
+        <translation type="obsolete">Desconocido</translation>
     </message>
     <message>
         <source>The current item does not contain any sub items.</source>
@@ -207,6 +216,26 @@
     <message>
         <source>Invalid or missing parameter: %parameter</source>
         <translation>Parametro inválido o no introducido: %parameter</translation>
+    </message>
+    <message>
+        <source>Use these checkboxes to select items for removal. Click the &quot;Remove selected&quot; button to  remove the selected items.</source>
+        <translation>Usa estas casillas de verificación para seleccionar los elementos que quieres eliminar. Pulsa el botón &quot;Eliminar seleccionados&quot; pera  eliminar los elementos seleccionados.</translation>
+    </message>
+    <message>
+        <source>You do not have permission to remove this item.</source>
+        <translation>No tienes permisos para eliminar este elemento.</translation>
+    </message>
+    <message>
+        <source>Remove the selected items from the list above.</source>
+        <translation>Eliminar los elementos seleccionados de la lista de arriba.</translation>
+    </message>
+    <message>
+        <source>You do not have permission to remove any of the items from the list above.</source>
+        <translation>No tienes permisos para eliminar cualquiera de los elementos de la lista de arriba.</translation>
+    </message>
+    <message>
+        <source>Automaitc update</source>
+        <translation>Actualización automática</translation>
     </message>
 </context>
 </TS>
