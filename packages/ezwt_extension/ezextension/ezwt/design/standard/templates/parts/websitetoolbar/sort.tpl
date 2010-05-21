@@ -140,10 +140,10 @@
     {if and( $priority_sorting, $node_can_edit, $children_count )}
         <input id="ezwt-update-priority" class="button" type="submit" name="UpdatePriorityButton" value="{'Update priorities'|i18n( 'design/standard/websitetoolbar/sort' )}" title="{'Apply changes to the priorities of the items in the list above.'|i18n( 'design/standard/websitetoolbar/sort' )}" />
         <input type="hidden" name="RedirectURIAfterPriority" value="websitetoolbar/sort/{$node.node_id}" />
-        <span id="ezwt-automatic-update-container">{'Automaitc update'|i18n( 'design/standard/websitetoolbar/sort' )} <input id="ezwt-automatic-update" type="checkbox" name="AutomaticUpdate" value="" /></span>
+        <span id="ezwt-automatic-update-container">{'Automatic update'|i18n( 'design/standard/websitetoolbar/sort' )} <input id="ezwt-automatic-update" type="checkbox" name="AutomaticUpdate" value="" /></span>
     {else}
         <input id="ezwt-update-priority" class="button-disabled" type="submit" name="UpdatePriorityButton" value="{'Update priorities'|i18n( 'design/standard/websitetoolbar/sort' )}" title="{'You cannot update the priorities because you do not have permission to edit the current item or because a non-priority sorting method is used.'|i18n( 'design/standard/websitetoolbar/sort' )}" disabled="disabled" />
-        <span id="ezwt-automatic-update-container" class="hide">{'Automaitc update'|i18n( 'design/standard/websitetoolbar/sort' )} <input id="ezwt-automatic-update" type="checkbox" name="AutomaticUpdate" value="" /></span> 
+        <span id="ezwt-automatic-update-container" class="hide">{'Automatic update'|i18n( 'design/standard/websitetoolbar/sort' )} <input id="ezwt-automatic-update" type="checkbox" name="AutomaticUpdate" value="" /></span>
     {/if}
     </div>
 

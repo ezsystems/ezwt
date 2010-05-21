@@ -234,7 +234,7 @@
         <translation>No tienes permisos para eliminar cualquiera de los elementos de la lista de arriba.</translation>
     </message>
     <message>
-        <source>Automaitc update</source>
+        <source>Automatic update</source>
         <translation>Actualización automática</translation>
     </message>
 </context>

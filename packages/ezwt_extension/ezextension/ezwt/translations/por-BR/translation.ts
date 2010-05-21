@@ -227,7 +227,7 @@
         <translation>Você não tem permissão para remover qualquer um dos itens da lista acima.</translation>
     </message>
     <message>
-        <source>Automaitc update</source>
+        <source>Automatic update</source>
         <translation>Atualização automática</translation>
     </message>
 </context>

@@ -232,7 +232,7 @@
         <translation>Sie haben nicht die erforderlichen Rechte, die Elemente von obiger Liste zu entfernen.</translation>
     </message>
     <message>
-        <source>Automaitc update</source>
+        <source>Automatic update</source>
         <translation>Automatisches Update</translation>
     </message>
 </context>

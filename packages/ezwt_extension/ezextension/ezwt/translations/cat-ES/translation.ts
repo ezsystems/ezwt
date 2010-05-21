@@ -234,7 +234,7 @@
         <translation>No tens permisos per esborrar qualsevol element de la llista de sobre.</translation>
     </message>
     <message>
-        <source>Automaitc update</source>
+        <source>Automatic update</source>
         <translation>Actualització automàtica</translation>
     </message>
 </context>
