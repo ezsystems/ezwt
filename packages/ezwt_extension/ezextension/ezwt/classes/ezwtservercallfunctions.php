@@ -1,14 +1,21 @@
 <?php
+/**
+ * eZ JS Core server call file for eZ Websitetoolbar
+ *
+ * @copyright Copyright (C) 1999-2010 eZ Systems AS. All rights reserved.
+ * @license http://ez.no/licenses/gnu_gpl GNU GPLv2
+ *
+ */
 
 /**
  * Implements methods called remotely by sending XHR calls
- * 
+ *
  */
 class ezwtServerCallFunctions
 {
     /**
      * Updating priority sorting for given node
-     * 
+     *
      * @param mixed $args
      * @return array
      */
@@ -16,7 +23,7 @@ class ezwtServerCallFunctions
     {
         $http = eZHTTPTool::instance();
 
-        if ( !$http->hasPostVariable('ContentNodeID') 
+        if ( !$http->hasPostVariable('ContentNodeID')
                 || !$http->hasPostVariable('PriorityID')
                     || !$http->hasPostVariable('Priority') )
         {
@@ -26,7 +33,7 @@ class ezwtServerCallFunctions
         $contentNodeID = $http->postVariable('ContentNodeID');
         $priorityArray = $http->postVariable('Priority');
         $priorityIDArray = $http->postVariable('PriorityID');
-        
+
         if ( eZOperationHandler::operationIsAvailable( 'content_updatepriority' ) )
         {
             $operationResult = eZOperationHandler::execute( 'content', 'updatepriority',
