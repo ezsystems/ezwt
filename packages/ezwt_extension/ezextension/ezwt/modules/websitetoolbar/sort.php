@@ -26,8 +26,6 @@
 // ## END COPYRIGHT, LICENSE AND WARRANTY NOTICE ##
 //
 
-include_once( 'kernel/common/template.php' );
-
 $nodeID = isset( $Params['NodeID'] ) ? (int) $Params['NodeID'] : 0;
 $Result = array();
 $node   = false;
@@ -49,11 +47,11 @@ if ( $nodeID !== 0 )
 
 if ( !$node instanceof eZContentObjectTreeNode )
 {
-    $Result['content'] = ezi18n( 'design/standard/websitetoolbar/sort', 'Invalid or missing parameter: %parameter', null, array( '%parameter' => 'NodeID' ) );
+    $Result['content'] = ezpI18n::tr( 'design/standard/websitetoolbar/sort', 'Invalid or missing parameter: %parameter', null, array( '%parameter' => 'NodeID' ) );
     return $Result;
 }
 
-$tpl = templateInit();
+$tpl = eZTemplate::factory();
 $tpl->setVariable( 'node', $node );
 $tpl->setVariable( 'view_parameters', $viewParameters );
 $tpl->setVariable( 'persistent_variable', false );
