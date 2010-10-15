@@ -34,6 +34,13 @@ class ezwtServerCallFunctions
         $priorityArray = $http->postVariable('Priority');
         $priorityIDArray = $http->postVariable('PriorityID');
 
+        $contentNode = eZContentObjectTreeNode::fetch( $contentNodeID );
+        if ( !$contentNode->attribute( 'can_edit' ) )
+        {
+            eZDebug::writeError( 'Current user can not update the priorities because he has no permissions to edit the node' );
+            return array();
+        }
+
         if ( eZOperationHandler::operationIsAvailable( 'content_updatepriority' ) )
         {
             $operationResult = eZOperationHandler::execute( 'content', 'updatepriority',
