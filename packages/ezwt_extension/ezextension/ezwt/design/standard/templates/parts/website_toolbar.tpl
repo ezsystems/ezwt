@@ -146,8 +146,8 @@
 </form>
 {/if}
 
-{if and( $content_object.content_class.is_container, 
-            $odf_hide_container_classes|contains( $content_object.content_class.identifier )|not(), 
+{if and( $content_object.content_class.is_container,
+            $odf_hide_container_classes|contains( $content_object.content_class.identifier )|not(),
                 $odf_import_access )}
 <form method="post" action={"/ezodf/import/"|ezurl} class="right">
   <input type="hidden" name="NodeID" value="{$current_node.node_id}" />
@@ -168,6 +168,28 @@
 <div class="bl"><div class="br"><div class="bc"></div></div></div>
 </div>
 
+{* Move toolbar to top of page, on all browsers but IE lt 8 *}
+{literal}
+<!--[if (gt IE 7)|!(IE)]><!-->
+<script type="text/javascript" async="async">
+<!--
+
+(function( doc )
+{
+    var wt = doc.getElementById( 'ezwt' ), header = doc.getElementById( 'header-position' );
+    if ( !wt ) return;
+
+    if ( header )
+        header.style.paddingTop = (wt.offsetHeight + 8) + 'px';
+
+    wt.style.width = wt.offsetWidth + 'px';
+    wt.className += ' floting-wt';
+})(document);
+
+//-->
+</script>
+<!--<![endif]-->
+{/literal}
 <!-- eZ website toolbar: END -->
 
 {/if}

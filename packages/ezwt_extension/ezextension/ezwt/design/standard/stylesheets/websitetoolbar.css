@@ -5,6 +5,20 @@ div#ezwt
     margin: 0.5em auto 0.5em auto;
 }
 
+div#ezwt.floting-wt
+{
+   position: fixed;
+   z-index: 9999;
+   top: 0;
+   opacity: 0.6;
+}
+
+div#ezwt.floting-wt:hover
+{
+    opacity: 1.0;
+}
+
+
 div#ezwt div.tl
 {
     background: url(../images/websitetoolbar/ezwt-tl.gif) no-repeat top left;
