@@ -1,6 +1,6 @@
 {* Move toolbar to top of page using classes and css (see websitetoolbar.tpl) *}
 {literal}
-<script type="text/javascript" async="async">
+<script type="text/javascript">
 <!--
 (function()
 {
