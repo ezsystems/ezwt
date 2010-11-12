@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS>
+<TS version="2.0" language="ja_JP">
 <context>
     <name>design/standard/content/edit</name>
     <message>
@@ -67,11 +67,11 @@
     </message>
     <message>
         <source>Sorting</source>
-        <translation>ソート</translation>
+        <translation>ソート順</translation>
     </message>
     <message>
         <source>Replace</source>
-        <translation>リプレイス</translation>
+        <translation>入れ替え</translation>
     </message>
     <message>
         <source>Export</source>
@@ -87,11 +87,15 @@
     </message>
     <message>
         <source>About</source>
-        <translation>アバウト</translation>
+        <translation>インストレーションについて</translation>
     </message>
     <message>
         <source>Edit object states</source>
         <translation>オブジェクトステートの編集</translation>
+    </message>
+    <message>
+        <source>Toggle menu link type edit.</source>
+        <translation>ナビゲーションのリンク編集モードに切り替え。</translation>
     </message>
 </context>
 <context>
@@ -137,7 +141,7 @@
         <translation>セクション</translation>
     </message>
     <message>
-        <source>Use the priority fields to control the order in which the items appear. You can use both positive and negative integers. Click the "Update priorities" button to apply the changes.</source>
+        <source>Use the priority fields to control the order in which the items appear. You can use both positive and negative integers. Click the &quot;Update priorities&quot; button to apply the changes.</source>
         <translation>アイテムの表示順をコントロールするには、優先度を利用して下さい。正と負両方の正数を利用出来ます。変更を適用するには「優先度の更新」ボタンをクリックして下さい。</translation>
     </message>
     <message>
