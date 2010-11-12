@@ -15,9 +15,9 @@
 <form method="post" action={concat( 'content/versionview/', $object.id, '/', $version.version, '/', $language, '/', $from_language )|ezurl} class="left">
 
 {if $object.versions|count|gt( 1 )}
-<input type="image" src={"websitetoolbar/ezwt-icon-versions.gif"|ezimage} name="VersionsButton" title="{'Manage versions'|i18n('design/standard/content/view/versionview')}" /> 
+<input type="image" src={"websitetoolbar/ezwt-icon-versions.gif"|ezimage} name="VersionsButton" title="{'Manage versions'|i18n('design/standard/content/view/versionview')}" />
 {else}
-<input disabled="disabled" type="image" src={"websitetoolbar/ezwt-icon-versions-disabled.gif"|ezimage} name="VersionsButton" title="{'Manage versions'|i18n('design/standard/content/view/versionview')}" /> 
+<input disabled="disabled" type="image" src={"websitetoolbar/ezwt-icon-versions-disabled.gif"|ezimage} name="VersionsButton" title="{'Manage versions'|i18n('design/standard/content/view/versionview')}" />
 {/if}
 
 {if or( and( eq( $version.status, 0 ), $is_creator, $object.can_edit ),
@@ -50,5 +50,7 @@
 </div></div></div>
 <div class="bl"><div class="br"><div class="bc"></div></div></div>
 </div>
+
+{include uri='design:parts/websitetoolbar/floating_toolbar.tpl'}
 
 <!-- eZ website toolbar: END -->

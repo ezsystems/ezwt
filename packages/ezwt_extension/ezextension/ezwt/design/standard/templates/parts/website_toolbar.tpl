@@ -168,28 +168,8 @@
 <div class="bl"><div class="br"><div class="bc"></div></div></div>
 </div>
 
-{* Move toolbar to top of page, on all browsers but IE lt 8 *}
-{literal}
-<!--[if (gt IE 7)|!(IE)]><!-->
-<script type="text/javascript" async="async">
-<!--
+{include uri='design:parts/websitetoolbar/floating_toolbar.tpl'}
 
-(function( doc )
-{
-    var wt = doc.getElementById( 'ezwt' ), header = doc.getElementById( 'header-position' );
-    if ( !wt ) return;
-
-    if ( header )
-        header.style.paddingTop = (wt.offsetHeight + 8) + 'px';
-
-    wt.style.width = wt.offsetWidth + 'px';
-    wt.className += ' floting-wt';
-})(document);
-
-//-->
-</script>
-<!--<![endif]-->
-{/literal}
 <!-- eZ website toolbar: END -->
 
 {/if}

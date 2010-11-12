@@ -59,4 +59,6 @@
 <div class="bl"><div class="br"><div class="bc"></div></div></div>
 </div>
 
+{include uri='design:parts/websitetoolbar/floating_toolbar.tpl'}
+
 <!-- eZ website toolbar: END -->

@@ -5,20 +5,31 @@ div#ezwt
     margin: 0.5em auto 0.5em auto;
 }
 
-div#ezwt.floting-wt
+div#page.floting-wt div#ezwt
 {
    position: fixed;
    z-index: 9999;
    top: 0;
-   opacity: 0.6;
+   left: 0;
+   width: 100%;
+   margin: 0;
+   background-color: white;
+   border-bottom: 1px solid black;
+   height: 34px;/* remember to change div#page.floting-wt "margin-top" if this is changed */
+   overflow: hidden;
 }
 
-div#ezwt.floting-wt:hover
+div#page.floting-wt div#ezwt div.mr
 {
-    opacity: 1.0;
+   padding: 6px 6px 0 6px;
 }
 
+div#page.floting-wt
+{
+   margin-top: 35px;/* div#page.floting-wt div#ezwt height + top/bottom border/padding/margin */
+}
 
+/*
 div#ezwt div.tl
 {
     background: url(../images/websitetoolbar/ezwt-tl.gif) no-repeat top left;
@@ -74,6 +85,7 @@ div#ezwt div.tr, div#ezwt div.mr, div#ezwt div.br
 {
     padding: 0 4px 0 4px;
 }
+*/
 
 div#ezwt-ezlogo
 {
