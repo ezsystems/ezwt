@@ -15,8 +15,14 @@ div#page.floting-wt div#ezwt
    margin: 0;
    background-color: white;
    border-bottom: 1px solid black;
-   height: 34px;/* remember to change div#page.floting-wt "margin-top" if this is changed */
+   height: 34px;/* remember to change div#page.floting-wt div#header-position "padding-top" if this is changed */
    overflow: hidden;
+   opacity: 0.75;
+}
+
+div#page.floting-wt div#ezwt:hover
+{
+   opacity: 1.0;
 }
 
 /* IE6 does not support fixed position (note: width is forced in floating_toolbar.tpl if ie6) */
@@ -30,9 +36,9 @@ div#page.floting-wt div#ezwt div.mr
    padding: 6px 6px 0 6px;
 }
 
-div#page.floting-wt
+div#page.floting-wt div#header-position
 {
-   margin-top: 35px;/* div#page.floting-wt div#ezwt height + top/bottom border/padding/margin */
+   padding-top: 35px;/* div#page.floting-wt div#ezwt height + top/bottom border/padding/margin */
 }
 
 /*
