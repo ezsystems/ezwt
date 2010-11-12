@@ -19,6 +19,12 @@ div#page.floting-wt div#ezwt
    overflow: hidden;
 }
 
+/* IE6 does not support fixed position (note: width is forced in floating_toolbar.tpl if ie6) */
+body.ie6 div#page.floting-wt div#ezwt
+{
+   position: absolute;
+}
+
 div#page.floting-wt div#ezwt div.mr
 {
    padding: 6px 6px 0 6px;
