@@ -4,22 +4,23 @@
 <!-- eZ website toolbar: START -->
 
 <div id="ezwt">
-<div class="tl"><div class="tr"><div class="tc"></div></div></div>
-<div class="mc"><div class="ml"><div class="mr float-break">
+<div id="ezwt-content" class="float-break">
 
 <!-- eZ website toolbar content: START -->
 
 {include uri='design:parts/websitetoolbar/logo.tpl'}
 
-<div id="ezwt-standardactions">
-<form method="post" action={concat( 'content/versionview/', $object.id, '/', $version.version, '/', $language, '/', $from_language )|ezurl} class="left">
+<form method="post" action={concat( 'content/versionview/', $object.id, '/', $version.version, '/', $language, '/', $from_language )|ezurl}>
 
+<div id="ezwt-versionaction" class="ezwt-actiongroup first">
 {if $object.versions|count|gt( 1 )}
 <input type="image" src={"websitetoolbar/ezwt-icon-versions.gif"|ezimage} name="VersionsButton" title="{'Manage versions'|i18n('design/standard/content/view/versionview')}" />
 {else}
 <input disabled="disabled" type="image" src={"websitetoolbar/ezwt-icon-versions-disabled.gif"|ezimage} name="VersionsButton" title="{'Manage versions'|i18n('design/standard/content/view/versionview')}" />
 {/if}
+</div>
 
+<div id="ezwt-editaction" class="ezwt-actiongroup">
 {if or( and( eq( $version.status, 0 ), $is_creator, $object.can_edit ),
                   and( eq( $object.status, 2 ), $object.can_edit ) )}
 <input type="image" src={"websitetoolbar/ezwt-icon-edit.gif"|ezimage} name="EditButton" title="{'Edit'|i18n( 'design/standard/content/view/versionview' )}" />
@@ -28,27 +29,38 @@
 <input disabled="disabled" type="image" src={"websitetoolbar/ezwt-icon-edit-disabled.gif"|ezimage} name="EditButton" title="{'Edit'|i18n( 'design/standard/content/view/versionview' )}" />
 <input disabled="disabled" type="image" src={"websitetoolbar/ezwt-icon-publish-disabled.gif"|ezimage} name="PreviewPublishButton" title="{'Publish'|i18n( 'design/standard/content/view/versionview' )}" />
 {/if}
+</div>
+
+
 
 {* Custom templates inclusion *}
+{def $custom_view_templates = array()}
 {foreach $custom_templates as $custom_template}
     {if is_set( $include_in_view[$custom_template] )}
         {def $views = $include_in_view[$custom_template]|explode( ';' )}
         {if $views|contains( 'versionview' )}
-            {include uri=concat( 'design:parts/websitetoolbar/', $custom_template, '.tpl' )}
+            {set $custom_view_templates = $custom_view_templates|append( $custom_template )}
         {/if}
         {undef $views}
     {/if}
 {/foreach}
 
-</form>
+{if $custom_view_templates}
+<div id="ezwt-miscaction" class="ezwt-actiongroup">
+{foreach $custom_view_templates as $custom_template}
+    {include uri=concat( 'design:parts/websitetoolbar/', $custom_template, '.tpl' )}
+{/foreach}
 </div>
+{/if}
+
+
+</form>
 
 {include uri='design:parts/websitetoolbar/help.tpl'}
 
 <!-- eZ website toolbar content: END -->
 
-</div></div></div>
-<div class="bl"><div class="br"><div class="bc"></div></div></div>
+</div>
 </div>
 
 {include uri='design:parts/websitetoolbar/floating_toolbar.tpl'}

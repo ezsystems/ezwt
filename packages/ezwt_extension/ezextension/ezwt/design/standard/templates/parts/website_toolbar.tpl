@@ -40,16 +40,15 @@
 <!-- eZ website toolbar: START -->
 
 <div id="ezwt">
-<div class="tl"><div class="tr"><div class="tc"></div></div></div>
-<div class="mc"><div class="ml"><div class="mr float-break">
+<div id="ezwt-content" class="float-break">
 
 <!-- eZ website toolbar content: START -->
 
 {include uri='design:parts/websitetoolbar/logo.tpl'}
 
-<div id="ezwt-standardactions">
+<form method="post" action={"content/action"|ezurl}>
 
-<form method="post" action={"content/action"|ezurl} class="left">
+<div id="ezwt-creataction" class="ezwt-actiongroup first">
 {if and( $content_object.can_create, $is_container )}
 <label for="ezwt-create" class="hide">Create:</label>
 {def $can_create_class_list = ezcreateclasslistgroups( $content_object.can_create_class_list )}
@@ -67,6 +66,9 @@
   <input type="hidden" name="ContentLanguageCode" value="{ezini( 'RegionalSettings', 'ContentObjectLocale', 'site.ini')}" />
   <input type="image" src={"websitetoolbar/ezwt-icon-new.gif"|ezimage} name="NewButton" title="{'Create here'|i18n('design/standard/parts/website_toolbar')}" />
 {/if}
+</div>
+
+<div id="ezwt-currentpageaction" class="ezwt-actiongroup">
 
 {if $content_object.can_edit}
     <input type="hidden" name="ContentObjectLanguageCode" value="{ezini( 'RegionalSettings', 'ContentObjectLocale', 'site.ini')}" />
@@ -91,6 +93,9 @@
 
 <a href={concat( "websitetoolbar/sort/", $current_node.node_id )|ezurl()} title="{'Sorting'|i18n( 'design/standard/parts/website_toolbar' )}"><img src={"websitetoolbar/ezwt-icon-sort.gif"|ezimage} alt="{'Sorting'|i18n( 'design/standard/parts/website_toolbar' )}" /></a>
 
+</div>
+
+<div id="ezwt-miscaction" class="ezwt-actiongroup">
 {* Custom templates inclusion *}
 {foreach $custom_templates as $custom_template}
     {if is_set( $include_in_view[$custom_template] )}
@@ -115,20 +120,16 @@
     {set $content_object_language_code = ''}
   {/if}
   <input type="hidden" name="ContentObjectLanguageCode" value="{$content_object_language_code}" />
-</form>
 </div>
-
-{include uri='design:parts/websitetoolbar/help.tpl'}
-
-<div id="ezwt-openoffice">
+</form>
 
 {def $disable_oo=true()}
-
 {if $odf_display_classes|contains( $content_object.content_class.identifier )}
     {set $disable_oo=false()}
 {/if}
 
 {if $disable_oo|not}
+<div id="ezwt-ooaction" class="ezwt-actiongroup">
 
 {if $odf_import_access}
 <form method="post" action={"/ezodf/import/"|ezurl} class="right">
@@ -156,16 +157,14 @@
 </form>
 {/if}
 
-<div id="ezwt-oologo">
-<img src={"websitetoolbar/ezwt-oo-logo.gif"|ezimage} width="58" height="18" alt="OpenOffice.org" />
 </div>
 {/if}
-</div>
+
+{include uri='design:parts/websitetoolbar/help.tpl'}
 
 <!-- eZ website toolbar content: END -->
 
-</div></div></div>
-<div class="bl"><div class="br"><div class="bc"></div></div></div>
+</div>
 </div>
 
 {include uri='design:parts/websitetoolbar/floating_toolbar.tpl'}

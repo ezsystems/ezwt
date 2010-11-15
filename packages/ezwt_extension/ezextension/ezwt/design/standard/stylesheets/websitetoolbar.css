@@ -5,131 +5,102 @@ div#ezwt
     margin: 0.5em auto 0.5em auto;
 }
 
-div#page.floting-wt div#ezwt
+body.floting-wt div#ezwt
 {
+   /* This elements offsetHeight is used to set padding-top on header in floating_toolbar.tpl, so avoid border on this element */
    position: fixed;
    z-index: 9999;
    top: 0;
    left: 0;
    width: 100%;
    margin: 0;
-   background-color: white;
-   border-bottom: 1px solid black;
-   height: 34px;/* remember to change div#page.floting-wt div#header-position "padding-top" if this is changed */
-   overflow: hidden;
-   opacity: 0.75;
+   opacity: 0.85;
 }
 
-div#page.floting-wt div#ezwt:hover
+body.ie6.floting-wt div#page div#ezwt
 {
-   opacity: 1.0;
-}
-
-/* IE6 does not support fixed position (note: width is forced in floating_toolbar.tpl if ie6) */
-body.ie6 div#page.floting-wt div#ezwt
-{
+   /* IE6 does not support fixed position (note: width is forced in floating_toolbar.tpl if ie6) */
    position: absolute;
 }
 
-div#page.floting-wt div#ezwt div.mr
+
+body.floting-wt div#ezwt:hover
 {
-   padding: 6px 6px 0 6px;
+   opacity: 1.0;
+   -webkit-transition-duration: 200ms;
+   -o-transition-duration: 200ms;
+   -moz-transition-duration: 200ms;
+   transition-duration: 200ms;
 }
 
-div#page.floting-wt div#header-position
+body.floting-wt div#ezwt-content
 {
-   padding-top: 35px;/* div#page.floting-wt div#ezwt height + top/bottom border/padding/margin */
+   padding: 2px 6px 0 6px;
+   text-align: center;
+   background-color: white;
+   border-bottom: 1px solid black;
+   height: 32px;
 }
 
-/*
-div#ezwt div.tl
+
+/* Group styles */
+
+div#ezwt div.ezwt-actiongroup
 {
-    background: url(../images/websitetoolbar/ezwt-tl.gif) no-repeat top left;
+    display: inline-block;
+    padding: 2px 3px 2px 3px;
+    border: 1px solid #ccc;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    height: 24px;
 }
 
-div#ezwt div.tr
+body.ie6 div#ezwt div.ezwt-actiongroup, body.ie7 div#ezwt div.ezwt-actiongroup
 {
-    background: url(../images/websitetoolbar/ezwt-tr.gif) no-repeat top right;
+    display: inline;
+    clear: none;
 }
 
-div#ezwt div.tc
+div#ezwt-ooaction
 {
-    background: url(../images/websitetoolbar/ezwt-tc.gif) repeat-x top left;
+    background-image: url(../images/websitetoolbar/ezwt-oo-logo.gif);
+    background-position: 2px 5px;
+    background-repeat: no-repeat;
+    padding-left: 67px!important;
 }
-
-div#ezwt div.mc
-{
-    background: #e8eaec url(../images/websitetoolbar/ezwt-mc.gif) repeat-x center left;
-}
-
-div#ezwt div.ml
-{
-    background: url(../images/websitetoolbar/ezwt-ml.gif) repeat-y center left;
-}
-
-div#ezwt div.mr
-{
-    background: url(../images/websitetoolbar/ezwt-mr.gif) repeat-y center right;
-}
-
-div#ezwt div.bl
-{
-    background: url(../images/websitetoolbar/ezwt-bl.gif) no-repeat bottom left;
-}
-
-div#ezwt div.br
-{
-    background: url(../images/websitetoolbar/ezwt-br.gif) no-repeat bottom right;
-}
-
-div#ezwt div.bc
-{
-    background: url(../images/websitetoolbar/ezwt-bc.gif) repeat-x bottom left;
-}
-
-div#ezwt div.tc, div#ezwt div.bc
-{
-    height: 4px;
-    font-size: 0;
-}
-
-div#ezwt div.tr, div#ezwt div.mr, div#ezwt div.br
-{
-    padding: 0 4px 0 4px;
-}
-*/
 
 div#ezwt-ezlogo
 {
-    margin: 3px 4px 2px 2px;
-    float: left;
-    display: inline; /* Fix for IE */
+    position: absolute;
+    top: 8px;
+    left: 8px;
 }
 
-div#ezwt-oologo
+div#ezwt-help
 {
-    margin: 2px 4px 0 2px;
-    float: right;
+    position: absolute;
+    top: 8px;
+    right: 8px;
 }
+
+div#ezwt-help a
+{
+    font-weight: bold;
+    color: #4a5054;
+    padding: 0 2px 0 2px;
+    text-decoration: none;
+    display: block;
+}
+
+
+/* Form styles */
 
 div#ezwt form
 {
-    margin: 0;
+    margin: 0 auto 0 auto;
     padding: 0;
-}
-
-div#ezwt .left
-{
-    margin-left: 4px;
-    float: left;
-    display: inline; /* Fix for IE */
-}
-
-div#ezwt .right
-{
-    margin-right: 4px;
-    float: right;
-    display: inline; /* Fix for IE */
+    display: inline;
 }
 
 div#ezwt select, div#ezwt input
@@ -154,38 +125,19 @@ div#ezwt input
     margin: 1px 0 0 0;
 }
 
-div#ezwt input.button
+div#ezwt input.button, div#ezwt input.defaultbutton
 {
     color: #4a5054;
-    height: 1.8em;
     background: #f2f4f6 url(../images/websitetoolbar/ezwt-button-bg.gif) repeat-x center left;
-    padding: 0 0.25em 0 0.25em;
     border: 1px solid;
     border-color: #ffffff #abb1b5 #abb1b5 #ffffff;
-    overflow: visible;
+    padding: 0 0.25em 0 0.25em;
+    vertical-align: top;
+    height: 20px;
 }
 
-div#ezwt-help
-{
-    margin: 2px 3px 0 3px;
-    float: right;
-    display: inline; /* Fix for IE */
-}
 
-div#ezwt-help p
-{
-    margin: 0;
-    vertical-align: middle;
-}
-
-div#ezwt-help a
-{
-    font-weight: bold;
-    color: #4a5054;
-    padding: 0 2px 0 2px;
-    text-decoration: none;
-    display: block;
-}
+/* Sort view style */
 
 table#ezwt-sort-list tr.ezwt-sort-drag-handler
 {

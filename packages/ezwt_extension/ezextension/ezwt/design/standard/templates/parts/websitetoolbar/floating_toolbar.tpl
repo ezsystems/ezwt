@@ -4,17 +4,24 @@
 <!--
 (function()
 {
-    var page = document.getElementById( 'page' );
-    if ( !page ) return;
+    var body = document.body, ezwt = document.getElementById( 'ezwt' );
+    if ( !ezwt ) return;
 
-    if ( page.className )
-        page.className += ' floting-wt';
+    if ( body.className )
+        body.className += ' floting-wt';
     else
-        page.className = 'floting-wt';
+        body.className = 'floting-wt';
 
     // Force width for ie6 as it inherits width from contex instead of view
-    if ( document.body.className.indexOf( 'ie6' ) !== -1 )
-        document.getElementById( 'ezwt' ).style.width = document.body.offsetWidth + 'px';
+    if ( body.className.indexOf( 'ie6' ) !== -1 )
+        ezwt.style.width = body.offsetWidth + 'px';
+
+    // Set padding on header / body based on height of toolbar
+    var page = document.getElementById( 'page' )
+    if ( page )
+        page.getElementsByTagName('div')[0].style.paddingTop = ezwt.offsetHeight + 'px';
+    else
+        body.style.paddingTop = ezwt.offsetHeight + 'px';
 })();
 //-->
 </script>
