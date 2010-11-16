@@ -18,8 +18,8 @@
 </div>
 
 <div id="ezwt-versionaction" class="ezwt-actiongroup">
-    <input type="image" src={"websitetoolbar/ezwt-icon-versions.gif"|ezimage} name="VersionsButton" title="{'Manage versions'|i18n('design/standard/content/edit')}" />
-    <input type="image" src={"websitetoolbar/ezwt-icon-preview.gif"|ezimage} name="PreviewButton" title="{'Preview'|i18n('design/standard/content/edit')}" />
+    <input class="ezwt-input-image" type="image" src={"websitetoolbar/ezwt-icon-versions.png"|ezimage} name="VersionsButton" title="{'Manage versions'|i18n('design/standard/content/edit')}" />
+    <input class="ezwt-input-image" type="image" src={"websitetoolbar/ezwt-icon-preview.png"|ezimage} name="PreviewButton" title="{'Preview'|i18n('design/standard/content/edit')}" />
 
 <select name="FromLanguage">
 <option value=""{if $from_language|not} selected="selected"{/if}> {'Translate from'|i18n( 'design/standard/content/edit' )}</option>
@@ -34,9 +34,9 @@
 </select>
 
 {if $object.status|eq(0)}
-    <input disabled="disabled" type="image" src={"websitetoolbar/ezwt-icon-add_translation-disabled.gif"|ezimage} name="FromLanguageButton" title="{'Translate'|i18n( 'design/standard/content/edit' )}" />
+    <input class="ezwt-input-image" disabled="disabled" type="image" src={"websitetoolbar/ezwt-icon-translation-disabled.png"|ezimage} name="FromLanguageButton" title="{'Translate'|i18n( 'design/standard/content/edit' )}" />
 {else}
-    <input type="image" src={"websitetoolbar/ezwt-icon-add_translation.gif"|ezimage} name="FromLanguageButton" title="{'Translate'|i18n( 'design/standard/content/edit' )}" />
+    <input class="ezwt-input-image" type="image" src={"websitetoolbar/ezwt-icon-translation.png"|ezimage} name="FromLanguageButton" title="{'Translate'|i18n( 'design/standard/content/edit' )}" />
 {/if}
 </div>
 

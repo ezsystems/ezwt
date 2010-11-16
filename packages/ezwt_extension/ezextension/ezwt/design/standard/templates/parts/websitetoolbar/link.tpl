@@ -1,4 +1,4 @@
-<input type="image" class="hide" src="{'websitetoolbar/ezwt-icon-url.gif'ezimage('no')}" alt="{'Toggle menu link type edit.'|i18n( 'design/standard/parts/website_toolbar' )}" title="{'Toggle menu link type edit.'|i18n( 'design/standard/parts/website_toolbar' )}" id="ezwt-link-switcher" />
+<input type="image" class="ezwt-input-image hide" src="{'websitetoolbar/ezwt-icon-url.png'ezimage('no')}" alt="{'Toggle menu link type edit.'|i18n( 'design/standard/parts/website_toolbar' )}" title="{'Toggle menu link type edit.'|i18n( 'design/standard/parts/website_toolbar' )}" id="ezwt-link-switcher" />
 
 {ezscript_require( 'ezjsc::yui3' )}
 <script type="text/javascript">

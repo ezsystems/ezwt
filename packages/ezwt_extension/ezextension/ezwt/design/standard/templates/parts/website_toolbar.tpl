@@ -64,7 +64,7 @@
   </select>
   {/if}
   <input type="hidden" name="ContentLanguageCode" value="{ezini( 'RegionalSettings', 'ContentObjectLocale', 'site.ini')}" />
-  <input type="image" src={"websitetoolbar/ezwt-icon-new.gif"|ezimage} name="NewButton" title="{'Create here'|i18n('design/standard/parts/website_toolbar')}" />
+  <input class="ezwt-input-image" type="image" src={"websitetoolbar/ezwt-icon-create.png"|ezimage} name="NewButton" title="{'Create here'|i18n('design/standard/parts/website_toolbar')}" />
 {/if}
 </div>
 
@@ -72,26 +72,26 @@
 
 {if $content_object.can_edit}
     <input type="hidden" name="ContentObjectLanguageCode" value="{ezini( 'RegionalSettings', 'ContentObjectLocale', 'site.ini')}" />
-    <input type="image" src={"websitetoolbar/ezwt-icon-edit.gif"|ezimage} name="EditButton" title="{'Edit: %node_name [%class_name]'|i18n( 'design/standard/parts/website_toolbar', , hash( '%node_name', $current_node.name|wash(), '%class_name', $content_object.content_class.name|wash() ) )}" />
+    <input class="ezwt-input-image" type="image" src={"websitetoolbar/ezwt-icon-edit.png"|ezimage} name="EditButton" title="{'Edit: %node_name [%class_name]'|i18n( 'design/standard/parts/website_toolbar', , hash( '%node_name', $current_node.name|wash(), '%class_name', $content_object.content_class.name|wash() ) )}" />
 {/if}
 
 {if $content_object.can_move}
-    <input type="image" src={"websitetoolbar/ezwt-icon-move.gif"|ezimage} name="MoveNodeButton" title="{'Move'|i18n('design/standard/parts/website_toolbar')}" />
+    <input class="ezwt-input-image" type="image" src={"websitetoolbar/ezwt-icon-move.png"|ezimage} name="MoveNodeButton" title="{'Move'|i18n('design/standard/parts/website_toolbar')}" />
 {/if}
 
 {if $content_object.can_remove}
-    <input type="image" src={"websitetoolbar/ezwt-icon-remove.gif"|ezimage} name="ActionRemove" title="{'Remove'|i18n('design/standard/parts/website_toolbar')}" />
+    <input class="ezwt-input-image" type="image" src={"websitetoolbar/ezwt-icon-remove.png"|ezimage} name="ActionRemove" title="{'Remove'|i18n('design/standard/parts/website_toolbar')}" />
 {/if}
 
 {if $can_manage_location}
     {if and( $can_manage_location, ne( $current_node.node_id, ezini( 'NodeSettings', 'RootNode','content.ini' ) ), ne( $current_node.node_id, ezini( 'NodeSettings', 'MediaRootNode', 'content.ini' ) ), ne( $current_node.node_id, ezini( 'NodeSettings', 'UserRootNode', 'content.ini' ) ) )}
-        <input type="image" src={"websitetoolbar/ezwt-icon-locations.gif"|ezimage} name="AddAssignmentButton" title="{'Add locations'|i18n( 'design/standard/parts/website_toolbar' )}" />
+        <input class="ezwt-input-image" type="image" src={"websitetoolbar/ezwt-icon-locations.png"|ezimage} name="AddAssignmentButton" title="{'Add locations'|i18n( 'design/standard/parts/website_toolbar' )}" />
     {else}
-        <input type="image" src={"websitetoolbar/ezwt-icon-locations-disabled.gif"|ezimage} name="AddAssignmentButton" title="{'Add locations'|i18n( 'design/standard/parts/website_toolbar' )}" disabled="disabled" />
+        <input class="ezwt-input-image disable-cursor" type="image" src={"websitetoolbar/ezwt-icon-locations-disabled.png"|ezimage} name="AddAssignmentButton" title="{'Add locations'|i18n( 'design/standard/parts/website_toolbar' )}" disabled="disabled" />
     {/if}
 {/if}
 
-<a href={concat( "websitetoolbar/sort/", $current_node.node_id )|ezurl()} title="{'Sorting'|i18n( 'design/standard/parts/website_toolbar' )}"><img src={"websitetoolbar/ezwt-icon-sort.gif"|ezimage} alt="{'Sorting'|i18n( 'design/standard/parts/website_toolbar' )}" /></a>
+<a href={concat( "websitetoolbar/sort/", $current_node.node_id )|ezurl()} title="{'Sorting'|i18n( 'design/standard/parts/website_toolbar' )}"><img src={"websitetoolbar/ezwt-icon-sort.png"|ezimage} alt="{'Sorting'|i18n( 'design/standard/parts/website_toolbar' )}" /></a>
 
 </div>
 
@@ -136,14 +136,14 @@
   <input type="hidden" name="ImportType" value="replace" />
   <input type="hidden" name="NodeID" value="{$current_node.node_id}" />
   <input type="hidden" name="ObjectID" value="{$content_object.id}" />
-  <input type="image" src={"websitetoolbar/ezwt-icon-replace.gif"|ezimage} name="ReplaceAction" title="{'Replace'|i18n('design/standard/parts/website_toolbar')}" />
+  <input type="image" class="ezwt-input-image" src={"websitetoolbar/ezwt-icon-replace.png"|ezimage} name="ReplaceAction" title="{'Replace'|i18n('design/standard/parts/website_toolbar')}" />
 </form>
 {/if}
 {if $odf_export_access}
 <form method="post" action={"/ezodf/export/"|ezurl} class="right">
   <input type="hidden" name="NodeID" value="{$current_node.node_id}" />
   <input type="hidden" name="ObjectID" value="{$content_object.id}" />
-  <input type="image" src={"websitetoolbar/ezwt-icon-export.gif"|ezimage} name="ExportAction" title="{'Export'|i18n('design/standard/parts/website_toolbar')}" />
+  <input type="image" class="ezwt-input-image" src={"websitetoolbar/ezwt-icon-export.png"|ezimage} name="ExportAction" title="{'Export'|i18n('design/standard/parts/website_toolbar')}" />
 </form>
 {/if}
 
@@ -153,7 +153,7 @@
 <form method="post" action={"/ezodf/import/"|ezurl} class="right">
   <input type="hidden" name="NodeID" value="{$current_node.node_id}" />
   <input type="hidden" name="ObjectID" value="{$content_object.id}" />
-  <input type="image" src={"websitetoolbar/ezwt-icon-import.gif"|ezimage} name="ImportAction" title="{'Import'|i18n('design/standard/parts/website_toolbar')}" />
+  <input type="image" class="ezwt-input-image" src={"websitetoolbar/ezwt-icon-import.png"|ezimage} name="ImportAction" title="{'Import'|i18n('design/standard/parts/website_toolbar')}" />
 </form>
 {/if}
 
