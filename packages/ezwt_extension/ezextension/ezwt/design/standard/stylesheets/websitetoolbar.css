@@ -2,44 +2,42 @@
 
 div#ezwt
 {
-    margin: 0.5em auto 0.5em auto;
+    margin: 0.3em 0 0.3em 0;
+    width: 100%;
+    position: relative;
 }
 
-body.floting-wt div#ezwt
+body.floating-wt div#ezwt
 {
-   /* This elements offsetHeight is used to set padding-top on header in floating_toolbar.tpl, so avoid border on this element */
-   position: fixed;
-   z-index: 9999;
-   top: 0;
-   left: 0;
-   width: 100%;
-   margin: 0;
-   opacity: 0.85;
+    /* This elements offsetHeight is used to set padding-top on header in floating_toolbar.tpl, so avoid border on this element */
+    position: fixed;
+    z-index: 9999;
+    top: 0px;
+    left: 0px;
+    margin: 0;
+    opacity: 0.85;
 }
 
-body.ie6.floting-wt div#page div#ezwt
+body.floating-wt div#ezwt:hover
 {
-   /* IE6 does not support fixed position (note: width is forced in floating_toolbar.tpl if ie6) */
-   position: absolute;
+    opacity: 1.0;
+    -webkit-transition-duration: 200ms;
+    -o-transition-duration: 200ms;
+    -moz-transition-duration: 200ms;
+    -ms-transition-duration: 200ms;
 }
 
-
-body.floting-wt div#ezwt:hover
+div#ezwt-content
 {
-   opacity: 1.0;
-   -webkit-transition-duration: 200ms;
-   -o-transition-duration: 200ms;
-   -moz-transition-duration: 200ms;
-   transition-duration: 200ms;
+    padding: 2px 6px 0 6px;
+    text-align: center;
+    background-color: white;
+    height: 32px;
 }
 
-body.floting-wt div#ezwt-content
+body.floating-wt div#ezwt-content
 {
-   padding: 2px 6px 0 6px;
-   text-align: center;
-   background-color: white;
-   border-bottom: 1px solid black;
-   height: 32px;
+    border-bottom: 1px solid black;
 }
 
 
@@ -48,6 +46,7 @@ body.floting-wt div#ezwt-content
 div#ezwt div.ezwt-actiongroup
 {
     display: inline-block;
+    vertical-align: top;
     padding: 2px 3px 2px 3px;
     border: 1px solid #ccc;
     -moz-border-radius: 2px;
@@ -113,16 +112,17 @@ div#ezwt select
 {
     color: #4a5054;
     background-color: #f0f2f4;
-    margin: 2px 0 2px 0;
+    margin: 2px 0 0 0;
     padding: 0;
     border: 1px solid #ccd2d6;
-    border-color: #abb1b5 #ffffff #ffffff #abb1b5;
+    border-color: #abb1b5 #dbe1e5 #dbe1e5 #abb1b5;
+    height: 19px;
     vertical-align: top;
 }
 
 div#ezwt input
 {
-    margin: 1px 0 0 0;
+    margin: 1px 0 0 0;/* images have 1px white space in the top so needs 1px less then buttons / selects */
 }
 
 div#ezwt input.button, div#ezwt input.defaultbutton
@@ -130,10 +130,11 @@ div#ezwt input.button, div#ezwt input.defaultbutton
     color: #4a5054;
     background: #f2f4f6 url(../images/websitetoolbar/ezwt-button-bg.gif) repeat-x center left;
     border: 1px solid;
-    border-color: #ffffff #abb1b5 #abb1b5 #ffffff;
+    border-color: #dbe1e5 #abb1b5 #abb1b5 #dbe1e5;
     padding: 0 0.25em 0 0.25em;
     vertical-align: top;
-    height: 20px;
+    height: 19px;
+    margin-top: 2px;
 }
 
 

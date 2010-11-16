@@ -6,15 +6,12 @@
 {
     var body = document.body, ezwt = document.getElementById( 'ezwt' );
     if ( !ezwt ) return;
+    if ( body.className.indexOf('ie6') !== -1 ) return;
 
     if ( body.className )
-        body.className += ' floting-wt';
+        body.className += ' floating-wt';
     else
-        body.className = 'floting-wt';
-
-    // Force width for ie6 as it inherits width from contex instead of view
-    if ( body.className.indexOf( 'ie6' ) !== -1 )
-        ezwt.style.width = body.offsetWidth + 'px';
+        body.className = 'floating-wt';
 
     // Set padding on header / body based on height of toolbar
     var page = document.getElementById( 'page' )

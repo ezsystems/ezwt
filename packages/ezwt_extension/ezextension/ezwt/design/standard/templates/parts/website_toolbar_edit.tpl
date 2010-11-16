@@ -11,20 +11,14 @@
 {include uri='design:parts/websitetoolbar/logo.tpl'}
 
 <div id="ezwt-editaction" class="ezwt-actiongroup first">
-    <input type="image" src={"websitetoolbar/ezwt-icon-publish.gif"|ezimage} name="PublishButton" title="{'Send for publishing'|i18n('design/standard/content/edit')}" />
-    <input class="button" type="submit" name="StoreButton" value="{'Store draft'|i18n( 'design/standard/content/edit' )}" title="{'Store the contents of the draft that is being edited and continue editing. Use this button to periodically save your work while editing.'|i18n( 'design/standard/content/edit' )}" />
-    <input type="image" src={"websitetoolbar/ezwt-icon-exit.gif"|ezimage} name="StoreExitButton" title="{'Store and exit'|i18n( 'design/standard/content/edit' )}" />
-    <input class="button" type="submit" name="DiscardButton" value="{'Discard draft'|i18n( 'design/standard/content/edit' )}" onclick="return confirmDiscard( '{'Are you sure you want to discard the draft?'|i18n( 'design/standard/content/edit' )|wash(javascript)}' );" title="{'Discard the draft that is being edited. This will also remove the translations that belong to the draft (if any).'|i18n( 'design/standard/content/edit' ) }" />
-
-    {*
     <input class="defaultbutton" type="submit" name="PublishButton" value="{'Send for publishing'|i18n( 'design/standard/content/edit' )}" title="{'Publish the contents of the draft that is being edited. The draft will become the published version of the object.'|i18n( 'design/standard/content/edit' )}" />
+    <input class="button" type="submit" name="StoreButton" value="{'Store draft'|i18n( 'design/standard/content/edit' )}" title="{'Store the contents of the draft that is being edited and continue editing. Use this button to periodically save your work while editing.'|i18n( 'design/standard/content/edit' )}" />
     <input class="button" type="submit" name="StoreExitButton" value="{'Store draft and exit'|i18n( 'design/standard/content/edit' )}" title="{'Store the draft that is being edited and exit from edit mode. Use when you need to exit your work and return later to continue.'|i18n( 'design/standard/content/edit' )}" />
-    *}
+    <input class="button" type="submit" name="DiscardButton" value="{'Discard draft'|i18n( 'design/standard/content/edit' )}" onclick="return window.confirmDiscard ? confirmDiscard( '{'Are you sure you want to discard the draft?'|i18n( 'design/standard/content/edit' )|wash(javascript)}' ): true;" title="{'Discard the draft that is being edited. This will also remove the translations that belong to the draft (if any).'|i18n( 'design/standard/content/edit' ) }" />
 </div>
 
 <div id="ezwt-versionaction" class="ezwt-actiongroup">
     <input type="image" src={"websitetoolbar/ezwt-icon-versions.gif"|ezimage} name="VersionsButton" title="{'Manage versions'|i18n('design/standard/content/edit')}" />
-
     <input type="image" src={"websitetoolbar/ezwt-icon-preview.gif"|ezimage} name="PreviewButton" title="{'Preview'|i18n('design/standard/content/edit')}" />
 
 <select name="FromLanguage">
