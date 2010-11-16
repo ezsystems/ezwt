@@ -25,9 +25,9 @@
 
 <div id="ezwt-versionaction" class="ezwt-actiongroup">
 {if $object.versions|count|gt( 1 )}
-    <input type="image" src={"websitetoolbar/ezwt-icon-versions.gif"|ezimage} name="VersionsButton" title="{'Manage versions'|i18n('design/standard/content/view/versionview')}" />
+    <input class="ezwt-input-image" type="image" src={"websitetoolbar/ezwt-icon-versions.png"|ezimage} name="VersionsButton" title="{'Manage versions'|i18n('design/standard/content/edit')}" />
 {else}
-    <input disabled="disabled" type="image" class="disabled" src={"websitetoolbar/ezwt-icon-versions-disabled.gif"|ezimage} name="VersionsButton" title="{'Manage versions'|i18n('design/standard/content/view/versionview')}" />
+    <input class="ezwt-input-image disabled" disabled="disabled" type="image" src={"websitetoolbar/ezwt-icon-versions.png"|ezimage} name="VersionsButton" title="{'Manage versions'|i18n('design/standard/content/edit')}" />
 {/if}
 </div>
 
