@@ -1,19 +1,50 @@
-<input type="image" class="ezwt-input-image hide" src="{'websitetoolbar/ezwt-icon-url.png'ezimage('no')}" alt="{'Toggle menu link type edit.'|i18n( 'design/standard/parts/website_toolbar' )}" title="{'Toggle menu link type edit.'|i18n( 'design/standard/parts/website_toolbar' )}" id="ezwt-link-switcher" />
+<input type="image" disabled="disabled" class="ezwt-input-image disabled" src="{'websitetoolbar/ezwt-icon-url.png'ezimage('no')}" alt="{'Toggle menu link type edit.'|i18n( 'design/standard/parts/website_toolbar' )}" title="{'Toggle menu link type edit.'|i18n( 'design/standard/parts/website_toolbar' )}" id="ezwt-link-switcher" />
 
-{ezscript_require( 'ezjsc::yui3' )}
 <script type="text/javascript">
 {literal}
-    if ( window.YUI !== undefined ) YUI( YUI3_config ).use('node', function(Y) {
-        Y.on('contentready', function() {
-            Y.get('#ezwt-link-switcher').removeClass('hide').on('click', function(e) {
-                Y.Node.all('.menu-item-link').each(function(n, v) {
-                    var rel = n.get('rel'), href = n.get('href');
-                    n.set('rel',  href);
-                    n.set('href', rel);
-                });
-                e.preventDefault();
-            });
-        }, '#ezwt-link-switcher' );
+(function( d )
+{
+    addEvent( window, 'load', function(){
+        var link = d.getElementById('ezwt-link-switcher');
+        link.disabled = false;
+        link.className = '';
+
+        addEvent( link, 'click', function( e ){
+            e = e || window.event;
+            if( e.preventDefault ) e.preventDefault();
+            else e.returnValue = false;
+            var links = getByClass( d, 'menu-item-link' );
+            for (var i = 0, l = links.length; i < l; i++)
+            {
+                var rel = links[i].getAttribute('rel'), href = links[i].getAttribute('href'), target = links[i].getAttribute('target'), rev = links[i].getAttribute('rev');
+                links[i].setAttribute('rel',  href );
+                links[i].setAttribute('href', rel );
+                links[i].setAttribute('target', rev ? rev : '' );
+                links[i].setAttribute('rev', target ? target : '' );
+            }
+            return false;
+        });
     });
+
+    function getByClass( n, className )
+    {
+        if (n.getElementsByClassName)
+          return n.getElementsByClassName(className);
+
+        var hits = [], els = n.getElementsByTagName("*");
+        for (var i = 0, l = els.length; i < l; i++)
+        {
+            if ( els[i].className && ( ' ' + els[i].className + ' ').indexOf( ' ' + className + ' ' ) !== -1 )
+                hits.push( els[i] );
+        }
+        return hits;
+    }
+
+    function addEvent( n, trigger, handler )
+    {
+        if ( n.addEventListener ) n.addEventListener( trigger, handler, true );
+        else if ( n.attachEvent ) n.attachEvent( 'on' + trigger, handler );
+    }
+})( document );
 {/literal}
 </script>

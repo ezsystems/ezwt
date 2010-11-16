@@ -2,7 +2,7 @@
 
 div#ezwt
 {
-    margin: 0.3em 0 0.3em 0;
+    margin: 0;
     width: 100%;
     position: relative;
 }
@@ -14,17 +14,16 @@ body.floating-wt div#ezwt
     z-index: 9999;
     top: 0px;
     left: 0px;
-    margin: 0;
     opacity: 0.85;
+    -webkit-transition-duration: 250ms;
+    -o-transition-duration: 250ms;
+    -moz-transition-duration: 250ms;
+    -ms-transition-duration: 250ms;
 }
 
 body.floating-wt div#ezwt:hover
 {
     opacity: 1.0;
-    -webkit-transition-duration: 200ms;
-    -o-transition-duration: 200ms;
-    -moz-transition-duration: 200ms;
-    -ms-transition-duration: 200ms;
 }
 
 div#ezwt-content
@@ -110,12 +109,12 @@ div#ezwt select, div#ezwt input
 
 div#ezwt select
 {
-    color: #4a5054;
+    /*color: #4a5054;
     background-color: #f0f2f4;
+    border: 1px solid #ccd2d6;
+    border-color: #abb1b5 #dbe1e5 #dbe1e5 #abb1b5;*/
     margin: 2px 0 0 0;
     padding: 0;
-    border: 1px solid #ccd2d6;
-    border-color: #abb1b5 #dbe1e5 #dbe1e5 #abb1b5;
     height: 19px;
     vertical-align: top;
 }
@@ -125,26 +124,27 @@ div#ezwt input
     margin: 1px 0 0 0;/* images have 1px white space in the top so needs 1px less then buttons / selects */
 }
 
-div#ezwt input.button, div#ezwt input.defaultbutton
+div#ezwt input.button, div#ezwt input.defaultbutton, div#ezwt input.button-disabled
 {
-    color: #4a5054;
+    /*color: #4a5054;
     background: #f2f4f6 url(../images/websitetoolbar/ezwt-button-bg.gif) repeat-x center left;
     border: 1px solid;
-    border-color: #dbe1e5 #abb1b5 #abb1b5 #dbe1e5;
+    border-color: #dbe1e5 #abb1b5 #abb1b5 #dbe1e5;*/
     padding: 0 0.25em 0 0.25em;
     vertical-align: top;
     height: 19px;
     margin-top: 2px;
 }
 
-div#ezwt .ezwt-disable-cursor 
-{
-    cursor: default;
-}
-
 div#ezwt input.ezwt-input-image, div#ezwt a img
 {
-    margin: 4px 0 0 0;
+    margin: 3px 0 0 0;
+}
+
+div#ezwt input.disabled, div#ezwt input.button-disabled
+{
+    opacity: 0.5;
+    cursor: default;
 }
 
 
@@ -154,6 +154,7 @@ table#ezwt-sort-list tr.ezwt-sort-drag-handler
 {
     cursor: move;
 }
+
 
 /* General styles */
 

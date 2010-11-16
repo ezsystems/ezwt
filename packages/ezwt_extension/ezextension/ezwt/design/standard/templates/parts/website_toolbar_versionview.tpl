@@ -12,22 +12,22 @@
 
 <form method="post" action={concat( 'content/versionview/', $object.id, '/', $version.version, '/', $language, '/', $from_language )|ezurl}>
 
-<div id="ezwt-versionaction" class="ezwt-actiongroup first">
-{if $object.versions|count|gt( 1 )}
-<input type="image" src={"websitetoolbar/ezwt-icon-versions.gif"|ezimage} name="VersionsButton" title="{'Manage versions'|i18n('design/standard/content/view/versionview')}" />
-{else}
-<input disabled="disabled" type="image" src={"websitetoolbar/ezwt-icon-versions-disabled.gif"|ezimage} name="VersionsButton" title="{'Manage versions'|i18n('design/standard/content/view/versionview')}" />
-{/if}
-</div>
-
 <div id="ezwt-editaction" class="ezwt-actiongroup">
 {if or( and( eq( $version.status, 0 ), $is_creator, $object.can_edit ),
                   and( eq( $object.status, 2 ), $object.can_edit ) )}
-<input type="image" src={"websitetoolbar/ezwt-icon-edit.gif"|ezimage} name="EditButton" title="{'Edit'|i18n( 'design/standard/content/view/versionview' )}" />
-<input type="image" src={"websitetoolbar/ezwt-icon-publish.gif"|ezimage} name="PreviewPublishButton" title="{'Publish'|i18n( 'design/standard/content/view/versionview' )}" />
+    <input type="submit" class="defaultbutton" name="EditButton" value="{'Edit'|i18n( 'design/standard/content/view/versionview' )}" />
+    <input type="submit" class="button" name="PreviewPublishButton" value="{'Publish'|i18n( 'design/standard/content/view/versionview' )}" />
 {else}
-<input disabled="disabled" type="image" src={"websitetoolbar/ezwt-icon-edit-disabled.gif"|ezimage} name="EditButton" title="{'Edit'|i18n( 'design/standard/content/view/versionview' )}" />
-<input disabled="disabled" type="image" src={"websitetoolbar/ezwt-icon-publish-disabled.gif"|ezimage} name="PreviewPublishButton" title="{'Publish'|i18n( 'design/standard/content/view/versionview' )}" />
+    <input type="submit" disabled="disabled" class="button-disabled" name="EditButton" value="{'Edit'|i18n( 'design/standard/content/view/versionview' )}" />
+    <input type="submit" disabled="disabled" class="button-disabled" name="PreviewPublishButton" value="{'Publish'|i18n( 'design/standard/content/view/versionview' )}" />
+{/if}
+</div>
+
+<div id="ezwt-versionaction" class="ezwt-actiongroup">
+{if $object.versions|count|gt( 1 )}
+    <input type="image" src={"websitetoolbar/ezwt-icon-versions.gif"|ezimage} name="VersionsButton" title="{'Manage versions'|i18n('design/standard/content/view/versionview')}" />
+{else}
+    <input disabled="disabled" type="image" class="disabled" src={"websitetoolbar/ezwt-icon-versions-disabled.gif"|ezimage} name="VersionsButton" title="{'Manage versions'|i18n('design/standard/content/view/versionview')}" />
 {/if}
 </div>
 
