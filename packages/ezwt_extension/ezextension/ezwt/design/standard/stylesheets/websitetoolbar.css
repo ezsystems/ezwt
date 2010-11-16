@@ -130,7 +130,7 @@ div#ezwt input.button, div#ezwt input.defaultbutton, div#ezwt input.button-disab
     background: #f2f4f6 url(../images/websitetoolbar/ezwt-button-bg.gif) repeat-x center left;
     border: 1px solid;
     border-color: #dbe1e5 #abb1b5 #abb1b5 #dbe1e5;*/
-    padding: 0 0.25em 0 0.25em;
+    padding: 0 0.5em 0 0.5em;
     vertical-align: top;
     height: 19px;
     margin-top: 2px;
