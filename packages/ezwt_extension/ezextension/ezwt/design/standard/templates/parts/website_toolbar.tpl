@@ -122,7 +122,7 @@
   <input type="hidden" name="ContentObjectLanguageCode" value="{$content_object_language_code}" />
 
 {if ezini( 'SiteSettings', 'AdditionalLoginFormActionURL' )}{* has_access_to_limitation('user', 'login', hash('SiteAccess', '<!-- SiteAccessName -->')) *}
-    <a href="{ezini( 'SiteSettings', 'AdditionalLoginFormActionURL' )|explode('user/login')[0]}{$current_node.url_alias}" target="_blank" title="{'Go to admin interface.'|i18n( 'design/standard/parts/website_toolbar' )}"><img src={"websitetoolbar/ezwt-icon-exit.gif"|ezimage} alt="{'Go to admin interface.'|i18n( 'design/standard/parts/website_toolbar' )}" /></a>
+    <a href="{ezini( 'SiteSettings', 'AdditionalLoginFormActionURL' )|explode('user/login')[0]}{$current_node.url_alias}" target="_blank" title="{'Go to admin interface.'|i18n( 'design/standard/parts/website_toolbar' )}"><img src={"websitetoolbar/ezwt-icon-admin.png"|ezimage} alt="{'Go to admin interface.'|i18n( 'design/standard/parts/website_toolbar' )}" /></a>
 {/if}
 
 </div>
