@@ -7,7 +7,7 @@
     addEvent( window, 'load', function(){
         var link = d.getElementById('ezwt-link-switcher');
         link.disabled = false;
-        link.className = '';
+        link.className = 'ezwt-input-image';
 
         addEvent( link, 'click', function( e ){
             e = e || window.event;
