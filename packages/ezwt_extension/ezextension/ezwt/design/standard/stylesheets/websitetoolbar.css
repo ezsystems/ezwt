@@ -28,15 +28,14 @@ body.floating-wt div#ezwt:hover
 
 div#ezwt-content
 {
-    padding: 2px 6px 0 6px;
+    padding: 2px 6px;
     text-align: center;
     background-color: white;
-    height: 32px;
 }
 
 body.floating-wt div#ezwt-content
 {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #999;
 }
 
 
@@ -71,7 +70,7 @@ div#ezwt-ooaction
 div#ezwt-ezlogo
 {
     position: absolute;
-    top: 1px;
+    top: 5px;
     left: 8px;
 }
 
@@ -141,14 +140,14 @@ div#ezwt input.button:hover, div#ezwt input.defaultbutton:hover, div#ezwt select
     border-color: #abb1b5;
 }
 
-div#ezwt input.ezwt-input-image, div#ezwt a img
+div#ezwt input.ezwt-input-image, div#ezwt div.ezwt-actiongroup a img
 {
     margin: 1px 0 0 0;
     border: 1px solid #fff;
     padding: 2px;
 }
 
-div#ezwt input.ezwt-input-image:hover, div#ezwt a:hover img
+div#ezwt input.ezwt-input-image:hover, div#ezwt div.ezwt-actiongroup a:hover img
 {
     border-color: #dbe1e5;
 }
