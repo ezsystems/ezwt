@@ -155,7 +155,7 @@ div#ezwt input.ezwt-input-image:hover, div#ezwt div.ezwt-actiongroup a:hover img
     border-color: #dbe1e5;
 }
 
-div#ezwt input.disabled, div#ezwt input.button-disabled
+div#ezwt .disabled, div#ezwt input.button-disabled
 {
     opacity: 0.5;
     cursor: default;

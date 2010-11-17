@@ -21,21 +21,21 @@
     <input class="ezwt-input-image" type="image" src={"websitetoolbar/ezwt-icon-versions.png"|ezimage} name="VersionsButton" title="{'Manage versions'|i18n('design/standard/content/edit')}" />
     <input class="ezwt-input-image" type="image" src={"websitetoolbar/ezwt-icon-preview.png"|ezimage} name="PreviewButton" title="{'Preview'|i18n('design/standard/content/edit')}" />
 
-<select name="FromLanguage">
-<option value=""{if $from_language|not} selected="selected"{/if}> {'Translate from'|i18n( 'design/standard/content/edit' )}</option>
-
-{if $object.status}
-{foreach $object.languages as $lang}
-<option value="{$lang.locale}"{if $lang.locale|eq($from_language)} selected="selected"{/if}>
-{$lang.name|wash}
-</option>
-{/foreach}
-{/if}
-</select>
-
 {if $object.status|eq(0)}
+    <select name="FromLanguage" class="disabled" disabled="disabled">
+    <option value=""{if $from_language|not} selected="selected"{/if}> {'Translate from'|i18n( 'design/standard/content/edit' )}</option>
+    </select>
     <input class="ezwt-input-image disabled" disabled="disabled" type="image" src={"websitetoolbar/ezwt-icon-translation-disabled.png"|ezimage} name="FromLanguageButton" title="{'Translate'|i18n( 'design/standard/content/edit' )}" />
 {else}
+    <select name="FromLanguage">
+    <option value=""{if $from_language|not} selected="selected"{/if}> {'Translate from'|i18n( 'design/standard/content/edit' )}</option>
+
+    {foreach $object.languages as $lang}
+    <option value="{$lang.locale}"{if $lang.locale|eq($from_language)} selected="selected"{/if}>
+    {$lang.name|wash}
+    </option>
+    {/foreach}
+    </select>
     <input class="ezwt-input-image" type="image" src={"websitetoolbar/ezwt-icon-translation.png"|ezimage} name="FromLanguageButton" title="{'Translate'|i18n( 'design/standard/content/edit' )}" />
 {/if}
 </div>
