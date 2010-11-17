@@ -28,7 +28,7 @@ body.floating-wt div#ezwt:hover
 
 div#ezwt-content
 {
-    padding: 2px 80px;
+    padding: 2px 70px;
     text-align: center;
     background-color: white;
 }
@@ -71,14 +71,14 @@ div#ezwt-ezlogo
 {
     position: absolute;
     top: 5px;
-    left: 8px;
+    left: 6px;
 }
 
 div#ezwt-help
 {
     position: absolute;
     top: 8px;
-    right: 8px;
+    right: 6px;
 }
 
 div#ezwt-help a
