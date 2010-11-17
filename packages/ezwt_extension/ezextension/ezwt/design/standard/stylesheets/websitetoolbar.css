@@ -109,10 +109,10 @@ div#ezwt select, div#ezwt input
 
 div#ezwt select
 {
-    /*color: #4a5054;
+    color: #4a5054;
     background-color: #f0f2f4;
     border: 1px solid #ccd2d6;
-    border-color: #abb1b5 #dbe1e5 #dbe1e5 #abb1b5;*/
+    border-color: #abb1b5 #dbe1e5 #dbe1e5 #abb1b5;
     margin: 2px 0 0 0;
     padding: 0;
     height: 19px;
@@ -126,10 +126,10 @@ div#ezwt input
 
 div#ezwt input.button, div#ezwt input.defaultbutton, div#ezwt input.button-disabled
 {
-    /*color: #4a5054;
+    color: #4a5054;
     background: #f2f4f6 url(../images/websitetoolbar/ezwt-button-bg.gif) repeat-x center left;
     border: 1px solid;
-    border-color: #dbe1e5 #abb1b5 #abb1b5 #dbe1e5;*/
+    border-color: #dbe1e5 #abb1b5 #abb1b5 #dbe1e5;
     padding: 0 0.5em 0 0.5em;
     vertical-align: top;
     height: 19px;
