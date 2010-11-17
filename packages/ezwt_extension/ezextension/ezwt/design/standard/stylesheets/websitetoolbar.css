@@ -47,7 +47,7 @@ div#ezwt div.ezwt-actiongroup
     display: inline-block;
     vertical-align: top;
     padding: 2px 3px 2px 3px;
-    border: 1px solid #ccc;
+    border: 1px solid #999;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     border-radius: 2px;
@@ -136,9 +136,21 @@ div#ezwt input.button, div#ezwt input.defaultbutton, div#ezwt input.button-disab
     margin-top: 2px;
 }
 
+div#ezwt input.button:hover, div#ezwt input.defaultbutton:hover, div#ezwt select:hover
+{
+    border-color: #abb1b5;
+}
+
 div#ezwt input.ezwt-input-image, div#ezwt a img
 {
-    margin: 3px 0 0 0;
+    margin: 1px 0 0 0;
+    border: 1px solid #fff;
+    padding: 2px;
+}
+
+div#ezwt input.ezwt-input-image:hover, div#ezwt a:hover img
+{
+    border-color: #dbe1e5;
 }
 
 div#ezwt input.disabled, div#ezwt input.button-disabled
