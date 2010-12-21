@@ -13,7 +13,8 @@
      $policies = fetch( 'user', 'user_role', hash( 'user_id', $current_user.contentobject_id ) )
      $available_for_current_class = false()
      $custom_templates = ezini( 'CustomTemplateSettings', 'CustomTemplateList', 'websitetoolbar.ini' )
-     $include_in_view = ezini( 'CustomTemplateSettings', 'IncludeInView', 'websitetoolbar.ini' )}
+     $include_in_view = ezini( 'CustomTemplateSettings', 'IncludeInView', 'websitetoolbar.ini' )
+     $node_hint = ': '|append( $current_node.name|wash(), ' [', $content_object.content_class.name|wash(), ']' ) }
 
      {foreach $policies as $policy}
         {if and( eq( $policy.moduleName, 'websitetoolbar' ),
@@ -72,15 +73,15 @@
 
 {if $content_object.can_edit}
     <input type="hidden" name="ContentObjectLanguageCode" value="{ezini( 'RegionalSettings', 'ContentObjectLocale', 'site.ini')}" />
-    <input class="ezwt-input-image" type="image" src={"websitetoolbar/ezwt-icon-edit.png"|ezimage} name="EditButton" title="{'Edit: %node_name [%class_name]'|i18n( 'design/standard/parts/website_toolbar', , hash( '%node_name', $current_node.name|wash(), '%class_name', $content_object.content_class.name|wash() ) )}" />
+    <input class="ezwt-input-image" type="image" src={"websitetoolbar/ezwt-icon-edit.png"|ezimage} name="EditButton" title="{'Edit'|i18n( 'design/standard/parts/website_toolbar')}{$node_hint}" />
 {/if}
 
 {if $content_object.can_move}
-    <input class="ezwt-input-image" type="image" src={"websitetoolbar/ezwt-icon-move.png"|ezimage} name="MoveNodeButton" title="{'Move'|i18n('design/standard/parts/website_toolbar')}" />
+    <input class="ezwt-input-image" type="image" src={"websitetoolbar/ezwt-icon-move.png"|ezimage} name="MoveNodeButton" title="{'Move'|i18n('design/standard/parts/website_toolbar')}{$node_hint}" />
 {/if}
 
 {if $content_object.can_remove}
-    <input class="ezwt-input-image" type="image" src={"websitetoolbar/ezwt-icon-remove.png"|ezimage} name="ActionRemove" title="{'Remove'|i18n('design/standard/parts/website_toolbar')}" />
+    <input class="ezwt-input-image" type="image" src={"websitetoolbar/ezwt-icon-remove.png"|ezimage} name="ActionRemove" title="{'Remove'|i18n('design/standard/parts/website_toolbar')}{$node_hint}" />
 {/if}
 
 {if $can_manage_location}
