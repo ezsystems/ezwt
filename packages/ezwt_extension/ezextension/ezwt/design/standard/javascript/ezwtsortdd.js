@@ -7,7 +7,7 @@ var eZWTSortDD = function() {
     
     var setupSortChangeEvent = function( Y )
     {
-        Y.get('#ezwt-sort-field').on('change', function( e )
+        Y.one('#ezwt-sort-field').on('change', function( e )
         {
             var select = e.target, selectedIndex = select.get('selectedIndex');
 
@@ -15,24 +15,24 @@ var eZWTSortDD = function() {
             {
                 if ( ret.enabled )
                 {
-                    Y.get('#ezwt-automatic-update-container').removeClass('hide');
-                    if ( !Y.get('#ezwt-automatic-update').get('checked') )
-                        Y.get('#ezwt-update-priority').set('disabled', false).replaceClass('button-disabled', 'button');
+                    Y.one('#ezwt-automatic-update-container').removeClass('hide');
+                    if ( !Y.one('#ezwt-automatic-update').get('checked') )
+                        Y.one('#ezwt-update-priority').set('disabled', false).replaceClass('button-disabled', 'button');
                 }
             }
             else
             {
                 if ( ret.enabled )
                 {
-                    Y.get('#ezwt-automatic-update-container').addClass('hide');
-                    Y.get('#ezwt-update-priority').set('disabled', true).replaceClass('button', 'button-disabled');
+                    Y.one('#ezwt-automatic-update-container').addClass('hide');
+                    Y.one('#ezwt-update-priority').set('disabled', true).replaceClass('button', 'button-disabled');
                 }
             }
         });
         Y.all('#ezwt-sort-list input.ezwt-priority-input').on('change', function( e )
         {
-        	// signal in gui that user needs to save this
-        	Y.get('#ezwt-update-priority').replaceClass('button', 'defaultbutton');
+            // signal in gui that user needs to save this
+            Y.one('#ezwt-update-priority').replaceClass('button', 'defaultbutton');
         });
     };
     
@@ -40,12 +40,12 @@ var eZWTSortDD = function() {
     {
         setupSortChangeEvent( Y );
 
-        Y.get('#ezwt-automatic-update').on('click', function(e)
+        Y.one('#ezwt-automatic-update').on('click', function(e)
         {
             if(e.target.get('checked'))
-                Y.get('#ezwt-update-priority').set('disabled', true).replaceClass('button', 'button-disabled');
+                Y.one('#ezwt-update-priority').set('disabled', true).replaceClass('button', 'button-disabled');
             else
-                Y.get('#ezwt-update-priority').set('disabled', false).replaceClass('button-disabled', 'button');
+                Y.one('#ezwt-update-priority').set('disabled', false).replaceClass('button-disabled', 'button');
         });
         
         var ioCallback = function(id, o)
@@ -106,15 +106,15 @@ var eZWTSortDD = function() {
                 visibility: '',
                 opacity: '1'
             });
-            
+
             // TODO: Exit if order has not changed (draged by mistake for instance) to not set priority when not needed
 
-            var autoUpdate = Y.get('#ezwt-automatic-update').get('checked');
+            var autoUpdate = Y.one('#ezwt-automatic-update').get('checked');
 
             if ( autoUpdate )
-            	var sortOrder = Y.get('#ezwt-sort-order').get('value') === '1';
+                var sortOrder = Y.one('#ezwt-sort-order').get('value') === '1';
             else
-            	var sortOrder = ret.sort_order;
+                var sortOrder = ret.sort_order;
 
             // sortOrder: desc: 0, asc: 1
             // updateToIndex: set priority on all nodes up until this index
@@ -122,23 +122,23 @@ var eZWTSortDD = function() {
             inputs.each(function(node, i)
             {
                 // Only set priority on nodes up until last node with priority
-            	if ( node.get('value') !== '0' )
-                	updateToIndex = i;
-            	// Or up until dragged node
-            	else if ( node.compareTo( dragPriority ) )
-                	updateToIndex = i;
+                if ( node.get('value') !== '0' )
+                    updateToIndex = i;
+                // Or up until dragged node
+                else if ( node.compareTo( dragPriority ) )
+                    updateToIndex = i;
             });
             priority = priority * ( updateToIndex + 1 );
             inputs.each(function(node, i)
             {
                 if ( i > updateToIndex )
-                	return;
+                    return;
 
-            	node.set('value', priority);
+                node.set('value', priority);
                 if ( sortOrder )
                     priority += 2;
                 else
-                	priority -= 2;
+                    priority -= 2;
             });
             
             if( autoUpdate )
@@ -147,8 +147,8 @@ var eZWTSortDD = function() {
             }
             else
             {
-            	// signal in gui that user needs to save this
-            	Y.get('#ezwt-update-priority').replaceClass('button', 'defaultbutton');
+                // signal in gui that user needs to save this
+                Y.one('#ezwt-update-priority').replaceClass('button', 'defaultbutton');
             }
         });
 
