@@ -29,9 +29,9 @@ class ezwtInfo
     static function info()
     {
         return array( 'Name' => 'eZ Website Toolbar',
-                      'Version' => '1.2-0alpha1',
+                      'Version' => '//autogentag//',
                       'Copyright' => 'Copyright (C) 1999-2010 eZ Systems AS',
-                      'License' => 'GNU General Public License v2.0'
+                      'License' => '//EZP_LICENSE//'
                      );
     }
 }
