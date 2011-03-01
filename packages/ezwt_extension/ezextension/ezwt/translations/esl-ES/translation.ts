@@ -1,4 +1,6 @@
-<!DOCTYPE TS><TS>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0">
 <context>
     <name>design/admin/node/view/full</name>
     <message>
@@ -18,7 +20,7 @@
     </message>
     <message>
         <source>Store and exit</source>
-        <translation>Guardar y salir</translation>
+        <translation type="obsolete">Guardar y salir</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -32,12 +34,44 @@
         <source>Translate</source>
         <translation>Traducir</translation>
     </message>
+    <message>
+        <source>Publish the contents of the draft that is being edited. The draft will become the published version of the object.</source>
+        <translation>Publicar el contenido del borrador que está siendo editado. El borrador pasará a ser la versión publicada del objeto.</translation>
+    </message>
+    <message>
+        <source>Store draft</source>
+        <translation>Almacenar borrador</translation>
+    </message>
+    <message>
+        <source>Store the contents of the draft that is being edited and continue editing. Use this button to periodically save your work while editing.</source>
+        <translation>Guardar el contenido del borrador que estásiendo editado. Usa este botón para guardar periódicar mientras estás editando.</translation>
+    </message>
+    <message>
+        <source>Store draft and exit</source>
+        <translation>Guardar borrador y salir</translation>
+    </message>
+    <message>
+        <source>Store the draft that is being edited and exit from edit mode. Use when you need to exit your work and return later to continue.</source>
+        <translation>Guardar el borrador que está siendo editado y salir del modo de edición. Usar cuando se necesita salir de tu trabajo y retomarlo más tarde.</translation>
+    </message>
+    <message>
+        <source>Discard draft</source>
+        <translation>Descartar borrador</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to discard the draft?</source>
+        <translation>¿Seguro que quieres descartar el borrador?</translation>
+    </message>
+    <message>
+        <source>Discard the draft that is being edited. This will also remove the translations that belong to the draft (if any).</source>
+        <translation>Descartar el borrador que está siendo editado. Esto también borrará las traducciónes pertenecientes al borrador (si las hay).</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/view/versionview</name>
     <message>
         <source>Manage versions</source>
-        <translation>Gestionar versiones</translation>
+        <translation type="obsolete">Gestionar versiones</translation>
     </message>
     <message>
         <source>Edit</source>
@@ -56,7 +90,7 @@
     </message>
     <message>
         <source>Edit: %node_name [%class_name]</source>
-        <translation>Editar: %node_name [%class_name]</translation>
+        <translation type="obsolete">Editar: %node_name [%class_name]</translation>
     </message>
     <message>
         <source>Move</source>
@@ -101,6 +135,14 @@
     <message>
         <source>Toggle menu link type edit.</source>
         <translation>Alternar menú de edición de tipos de enlace.</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Editar</translation>
+    </message>
+    <message>
+        <source>Go to admin interface.</source>
+        <translation>Ir al sitio de administración.</translation>
     </message>
 </context>
 <context>
@@ -147,11 +189,11 @@
     </message>
     <message>
         <source>Use the priority fields to control the order in which the items appear. You can use both positive and negative integers. Click the &quot;Update priorities&quot; button to apply the changes.</source>
-        <translation>Utiliza los campos de prioridad para controlar el orden en el que aparecen los elementos. Puede usar números enteros positivos y negativos. Persiona el botón &quot;Actualizar prioridades&quot; para aplicar los cambios.</translation>
+        <translation>Utiliza los campos de prioridad para controlar el orden en el que aparecen los elementos. Puedes usar números enteros positivos y negativos. Persiona el botón &quot;Actualizar prioridades&quot; para aplicar los cambios.</translation>
     </message>
     <message>
         <source>You are not allowed to update the priorities because you do not have permission to edit &lt;%node_name&gt;.</source>
-        <translation>No está autorizado para actualizar las prioridades debido a que no tiene permisos de edición &lt;%node_name&gt;.</translation>
+        <translation>No estás autorizado para actualizar las prioridades debido a que no tienes permisos de edición &lt;%node_name&gt;.</translation>
     </message>
     <message>
         <source>Unknown</source>
@@ -171,7 +213,7 @@
     </message>
     <message>
         <source>You cannot update the priorities because you do not have permission to edit the current item or because a non-priority sorting method is used.</source>
-        <translation>No puede actualizar las prioridades debido a que no tiene permiso para editar el elemento actual o porque no esta utilizando un método de ordenación por prioridades.</translation>
+        <translation>No puedes actualizar las prioridades debido a que no tienes permiso para editar el elemento actual o porque no estás utilizando un método de ordenación por prioridades.</translation>
     </message>
     <message>
         <source>Sorting</source>
@@ -195,7 +237,7 @@
     </message>
     <message>
         <source>You cannot set the sorting method for the current location because you do not have permission to edit the current item.</source>
-        <translation>No puede establecer el método de ordenación de la ubicación actual debido a que no tiene permisos para editar el elemento actual.</translation>
+        <translation>No puedes establecer el método de ordenación de la ubicación actual debido a que no tienes permisos para editar el elemento actual.</translation>
     </message>
     <message>
         <source>Use these controls to set the sorting method for the sub items of the current location.</source>
@@ -219,7 +261,7 @@
     </message>
     <message>
         <source>Use these checkboxes to select items for removal. Click the &quot;Remove selected&quot; button to  remove the selected items.</source>
-        <translation>Usa estas casillas de verificación para seleccionar los elementos que quieres eliminar. Pulsa el botón &quot;Eliminar seleccionados&quot; pera  eliminar los elementos seleccionados.</translation>
+        <translation>Usa estas casillas de verificación para seleccionar los elementos que quieres eliminar. Pulsa el botón &quot;Eliminar seleccionados&quot; para eliminar los elementos seleccionados.</translation>
     </message>
     <message>
         <source>You do not have permission to remove this item.</source>
