@@ -156,6 +156,7 @@
                               5, 'Depth'|i18n( 'design/standard/websitetoolbar/sort' ),
                               3, 'Modified'|i18n( 'design/standard/websitetoolbar/sort' ),
                               9, 'Name'|i18n( 'design/standard/websitetoolbar/sort' ),
+                              1, 'Path String'|i18n( 'design/standard/websitetoolbar/sort' ),
                               8, 'Priority'|i18n( 'design/standard/websitetoolbar/sort' ),
                               2, 'Published'|i18n( 'design/standard/websitetoolbar/sort' ),
                               4, 'Section'|i18n( 'design/standard/websitetoolbar/sort' ) )
