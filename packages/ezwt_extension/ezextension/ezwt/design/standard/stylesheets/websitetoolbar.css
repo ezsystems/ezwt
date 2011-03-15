@@ -16,9 +16,10 @@ body.floating-wt div#ezwt
     left: 0px;
     opacity: 0.85;
     -webkit-transition-duration: 250ms;
-    -o-transition-duration: 250ms;
     -moz-transition-duration: 250ms;
     -ms-transition-duration: 250ms;
+    -o-transition-duration: 250ms;
+    transition-duration: 250ms;
 }
 
 body.floating-wt div#ezwt:hover
@@ -47,8 +48,6 @@ div#ezwt div.ezwt-actiongroup
     vertical-align: top;
     padding: 2px 3px 2px 3px;
     border: 1px solid #999;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
     border-radius: 2px;
     height: 24px;
 }
@@ -126,12 +125,14 @@ div#ezwt input.button, div#ezwt input.defaultbutton, div#ezwt input.button-disab
 {
     color: #4a5054;
     background: #f2f4f6 url(../images/websitetoolbar/ezwt-button-bg.gif) repeat-x center left;
-    background: -moz-linear-gradient(100% 100% 90deg, #dbe1e5, #fff);
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#dbe1e5));
+    background: -moz-linear-gradient(100% 100% 90deg, #dbe1e5, #fff);
+    background: -ms-linear-gradient(100% 100% 90deg, #dbe1e5, #fff);
+    background: -o-linear-gradient(100% 100% 90deg, #dbe1e5, #fff);
+    background: linear-gradient(100% 100% 90deg, #dbe1e5, #fff);
     border: 1px solid;
     border-color: #dbe1e5 #abb1b5 #abb1b5 #dbe1e5;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
+    border-radius: 2px;
     padding: 0 0.5em 0 0.5em;
     vertical-align: top;
     height: 19px;
