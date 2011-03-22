@@ -126,10 +126,10 @@ div#ezwt input.button, div#ezwt input.defaultbutton, div#ezwt input.button-disab
     color: #4a5054;
     background: #f2f4f6 url(../images/websitetoolbar/ezwt-button-bg.gif) repeat-x center left;
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#dbe1e5));
-    background: -moz-linear-gradient(100% 100% 90deg, #dbe1e5, #fff);
-    background: -ms-linear-gradient(100% 100% 90deg, #dbe1e5, #fff);
-    background: -o-linear-gradient(100% 100% 90deg, #dbe1e5, #fff);
-    background: linear-gradient(100% 100% 90deg, #dbe1e5, #fff);
+    background: -moz-linear-gradient(top,  #fff,  #dbe1e5);
+    background: -ms-linear-gradient(top,  #fff,  #dbe1e5);
+    background: -o-linear-gradient(top,  #fff,  #dbe1e5);
+    background: linear-gradient(top,  #fff,  #dbe1e5);
     border: 1px solid;
     border-color: #dbe1e5 #abb1b5 #abb1b5 #dbe1e5;
     border-radius: 2px;
