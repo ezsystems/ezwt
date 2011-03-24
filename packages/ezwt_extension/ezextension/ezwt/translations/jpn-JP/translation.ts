@@ -259,5 +259,9 @@
         <source>Automatic update</source>
         <translation>自動アップデート</translation>
     </message>
+    <message>
+        <source>Path String</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

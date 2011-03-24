@@ -130,7 +130,7 @@
     </message>
     <message>
         <source>Edit object states</source>
-        <translation>Modifier les états de l'objet</translation>
+        <translation>Modifier les états de l&apos;objet</translation>
     </message>
     <message>
         <source>Edit</source>
@@ -138,7 +138,7 @@
     </message>
     <message>
         <source>Go to admin interface.</source>
-        <translation>Aller dans l'interface d'administration</translation>
+        <translation>Aller dans l&apos;interface d&apos;administration</translation>
     </message>
     <message>
         <source>Toggle menu link type edit.</source>
@@ -274,6 +274,10 @@
     <message>
         <source>Automatic update</source>
         <translation>Mise à jour automatique</translation>
+    </message>
+    <message>
+        <source>Path String</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

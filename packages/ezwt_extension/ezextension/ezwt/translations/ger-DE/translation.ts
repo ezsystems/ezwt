@@ -20,7 +20,7 @@
     </message>
     <message>
         <source>Store and exit</source>
-        <translation>Speichern und verlassen</translation>
+        <translation type="obsolete">Speichern und verlassen</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -34,12 +34,44 @@
         <source>Translate</source>
         <translation>Übersetzen</translation>
     </message>
+    <message>
+        <source>Publish the contents of the draft that is being edited. The draft will become the published version of the object.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Store draft</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Store the contents of the draft that is being edited and continue editing. Use this button to periodically save your work while editing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Store draft and exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Store the draft that is being edited and exit from edit mode. Use when you need to exit your work and return later to continue.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Discard draft</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Are you sure you want to discard the draft?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Discard the draft that is being edited. This will also remove the translations that belong to the draft (if any).</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/view/versionview</name>
     <message>
         <source>Manage versions</source>
-        <translation>Versionen verwalten</translation>
+        <translation type="obsolete">Versionen verwalten</translation>
     </message>
     <message>
         <source>Edit</source>
@@ -58,7 +90,7 @@
     </message>
     <message>
         <source>Edit: %node_name [%class_name]</source>
-        <translation>Bearbeite: %node_name [%class_name]</translation>
+        <translation type="obsolete">Bearbeite: %node_name [%class_name]</translation>
     </message>
     <message>
         <source>Move</source>
@@ -102,6 +134,14 @@
     </message>
     <message>
         <source>Toggle menu link type edit.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished">Bearbeiten</translation>
+    </message>
+    <message>
+        <source>Go to admin interface.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -234,6 +274,10 @@
     <message>
         <source>Automatic update</source>
         <translation>Automatisches Update</translation>
+    </message>
+    <message>
+        <source>Path String</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
