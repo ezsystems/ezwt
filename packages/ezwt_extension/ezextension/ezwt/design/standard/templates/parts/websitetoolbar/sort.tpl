@@ -70,24 +70,25 @@
         {/if}
     </tr>
 
+    {def $row_count=1}
     {foreach $children as $child sequence array( 'bglight', 'bgdark' ) as $sequence_style}
     {if $child.can_remove}
         {set $can_remove = true()}
     {/if}
     {def $section_object = fetch( 'section', 'object', hash( 'section_id', $child.object.section_id ) )}
 
-        <tr class="{$sequence_style} ezwt-sort-dragable">
+        <tr id="ezwt-table-row-{$row_count}" class="{$sequence_style} ezwt-sort-dragable">
 
             <td>
             {if $child.can_remove}
-                <input type="checkbox" name="DeleteIDArray[]" value="{$child.node_id}" title="{'Use these checkboxes to select items for removal. Click the "Remove selected" button to  remove the selected items.'|i18n( 'design/standard/websitetoolbar/sort' )|wash()}" />
+                <input id="ezwt-table-row-{$row_count}-column-1" type="checkbox" name="DeleteIDArray[]" value="{$child.node_id}" title="{'Use these checkboxes to select items for removal. Click the "Remove selected" button to  remove the selected items.'|i18n( 'design/standard/websitetoolbar/sort' )|wash()}" />
                 {else}
-                <input type="checkbox" name="DeleteIDArray[]" value="{$child.node_id}" title="{'You do not have permission to remove this item.'|i18n( 'design/standard/websitetoolbar/sort' )}" disabled="disabled" />
+                <input id="ezwt-table-row-{$row_count}-column-1" type="checkbox" name="DeleteIDArray[]" value="{$child.node_id}" title="{'You do not have permission to remove this item.'|i18n( 'design/standard/websitetoolbar/sort' )}" disabled="disabled" />
             {/if}
             </td>
 
         {* Name *}
-        <td>{$child.name|wash}</td>
+        <td id="ezwt-table-row-{$row_count}-column-2">{$child.name|wash}</td>
 
         {* Class type *}
         <td class="class">{$child.class_name|wash}</td>
@@ -96,16 +97,18 @@
         {if $priority_sorting}
             <td>
             {if node_can_edit}
-                <input class="priority ezwt-priority-input" type="text" name="Priority[]" size="3" value="{$child.priority}" title="{'Use the priority fields to control the order in which the items appear. You can use both positive and negative integers. Click the "Update priorities" button to apply the changes.'|i18n( 'design/standard/websitetoolbar/sort' )|wash}" />
-                <input type="hidden" name="PriorityID[]" value="{$child.node_id}" />
+                <input id="ezwt-table-row-{$row_count}-column-4-a" class="priority ezwt-priority-input" type="text" name="Priority[]" size="3" value="{$child.priority}" title="{'Use the priority fields to control the order in which the items appear. You can use both positive and negative integers. Click the "Update priorities" button to apply the changes.'|i18n( 'design/standard/websitetoolbar/sort' )|wash}" />
+                <input id="ezwt-table-row-{$row_count}-column-4-b" type="hidden" name="PriorityID[]" value="{$child.node_id}" />
             {else}
-                <input class="priority ezwt-priority-input" type="text" name="Priority[]" size="3" value="{$child.priority}" title="{'You are not allowed to update the priorities because you do not have permission to edit <%node_name>.'|i18n( 'design/standard/websitetoolbar/sort',, hash( '%node_name', $node_name ) )|wash}" disabled="disabled" />
+                <input id="ezwt-table-row-{$row_count}-column-4-a" class="priority ezwt-priority-input" type="text" name="Priority[]" size="3" value="{$child.priority}" title="{'You are not allowed to update the priorities because you do not have permission to edit <%node_name>.'|i18n( 'design/standard/websitetoolbar/sort',, hash( '%node_name', $node_name ) )|wash}" disabled="disabled" />
             {/if}
             </td>
         {/if}
       </tr>
+    {set $row_count=inc($row_count)}
     {undef $section_object}
     {/foreach}
+    {undef $row_count}
 </table>
 
 {else}
