@@ -63,9 +63,15 @@ var eZWTSortDD = function() {
             if (drop.get('tagName').toLowerCase() === 'tr') {
 
                 if (!goingUp) {
-                    drop = drop.get('nextSibling');
+                    var dropSibling = drop.get('nextSibling');
+                    if (!dropSibling) {
+                        drop.get('parentNode').append(drag);
+                    } else {
+                        drop.get('parentNode').insertBefore(drag, dropSibling);
+                    }
+                } else {
+                    drop.get('parentNode').insertBefore(drag, drop);
                 }
-                drop.get('parentNode').insertBefore(drag, drop);
                 e.drop.sizeShim();
             }
         });
