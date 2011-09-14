@@ -13,7 +13,6 @@ class ezwtFunctionCollection
      * Fetch if current user can use website toolbar
      * Used by fetch( 'websitetoolbar', 'can_use', hash( 'class_id', $class_id ) ) template function
      *
-     * @static
      * @param int $classID ID of content class
      * @return bool
      */
