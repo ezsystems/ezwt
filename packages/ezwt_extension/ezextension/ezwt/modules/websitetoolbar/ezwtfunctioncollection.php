@@ -9,7 +9,6 @@
 
 class ezwtFunctionCollection
 {
-
     /**
      * Fetch if current user can use website toolbar
      * Used by fetch( 'websitetoolbar', 'can_use', hash( 'class_id', $class_id ) ) template function
@@ -31,7 +30,8 @@ class ezwtFunctionCollection
             return array( 'result' => false );
 
         $availableForCurrentClass = false;
-        $policies = eZUserFunctionCollection::fetchUserRole( $currentUser->attribute( 'contentobject_id' ) );
+        $userFunctions = new eZUserFunctionCollection();
+        $policies = $userFunctions->fetchUserRole( $currentUser->attribute( 'contentobject_id' ) );
 
         foreach ( $policies['result'] as $policy )
         {
