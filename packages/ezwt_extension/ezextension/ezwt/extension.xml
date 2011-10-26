@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<software>
+    <metadata>
+        <name>eZ Website Toolbar</name>
+        <version>//autogentag//</version>
+        <copyright>Copyright (C) 1999-2011 eZ Systems AS</copyright>
+        <license>//EZP_LICENSE//</license>
+        <info_url>https://github.com/ezsystems/ezwt</info_url>
+    </metadata>
+
+    <dependencies>
+        <requires>
+            <extension name="ezjscore" />
+        </requires>
+    </dependencies>
+
+</software>
