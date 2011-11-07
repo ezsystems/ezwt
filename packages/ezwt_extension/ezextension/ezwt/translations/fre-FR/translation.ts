@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
+<TS version="2.0" language="fr_FR">
 <context>
     <name>design/admin/node/view/full</name>
     <message>
@@ -138,7 +138,7 @@
     </message>
     <message>
         <source>Go to admin interface.</source>
-        <translation>Aller dans l&apos;interface d&apos;administration</translation>
+        <translation>Aller dans l&apos;interface d&apos;administration.</translation>
     </message>
     <message>
         <source>Toggle menu link type edit.</source>
@@ -277,7 +277,7 @@
     </message>
     <message>
         <source>Path String</source>
-        <translation type="unfinished"></translation>
+        <translation>Fil d&apos;Ariane (chemin)</translation>
     </message>
 </context>
 </TS>
