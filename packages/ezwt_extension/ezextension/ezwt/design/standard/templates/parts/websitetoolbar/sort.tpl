@@ -204,7 +204,5 @@
 </div>
 
 <script type="text/javascript">
-
 eZWTSortDD.init();
-
 </script>
