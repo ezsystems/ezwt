@@ -5,7 +5,7 @@
     <name>design/admin/node/view/full</name>
     <message>
         <source>Remove selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover selecionado</translation>
     </message>
 </context>
 <context>
@@ -36,35 +36,35 @@
     </message>
     <message>
         <source>Publish the contents of the draft that is being edited. The draft will become the published version of the object.</source>
-        <translation type="unfinished"></translation>
+        <translation>Publicar os conteúdos do rascunho que está sendo editado. O rascunho tornará a versão publicada do objeto.</translation>
     </message>
     <message>
         <source>Store draft</source>
-        <translation type="unfinished"></translation>
+        <translation>Armazenar rascunho</translation>
     </message>
     <message>
         <source>Store the contents of the draft that is being edited and continue editing. Use this button to periodically save your work while editing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Armazenar os conteúdos do rascunho que está sendo editado e continuar editando. Use este botão periodicamente para salvar seu trabalho enquanto estiver editando.</translation>
     </message>
     <message>
         <source>Store draft and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Armazenar rascunho e sair</translation>
     </message>
     <message>
         <source>Store the draft that is being edited and exit from edit mode. Use when you need to exit your work and return later to continue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Armazenar o rascunho que está sendo editado e sair do modo de edição. Use quando você precisa sair de seu trabalho e retornar mais tarde para continuar.</translation>
     </message>
     <message>
         <source>Discard draft</source>
-        <translation type="unfinished"></translation>
+        <translation>Descartar rascunho</translation>
     </message>
     <message>
         <source>Are you sure you want to discard the draft?</source>
-        <translation type="unfinished"></translation>
+        <translation>Você tem certeza que deseja descartar o rascunho?</translation>
     </message>
     <message>
         <source>Discard the draft that is being edited. This will also remove the translations that belong to the draft (if any).</source>
-        <translation type="unfinished"></translation>
+        <translation>Descartar o rascunho que está sendo editado. Isto irá remover as traduções que pertencem para o rascunho (se existir alguma).</translation>
     </message>
 </context>
 <context>
@@ -138,11 +138,11 @@
     </message>
     <message>
         <source>Edit</source>
-        <translation type="unfinished">Editar</translation>
+        <translation>Editar</translation>
     </message>
     <message>
         <source>Go to admin interface.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ir para interface administrativa</translation>
     </message>
 </context>
 <context>
@@ -281,7 +281,7 @@
     </message>
     <message>
         <source>Path String</source>
-        <translation type="unfinished"></translation>
+        <translation>Caminho</translation>
     </message>
 </context>
 </TS>
