@@ -149,6 +149,7 @@ div#ezwt input.ezwt-input-image, div#ezwt div.ezwt-actiongroup a img
     margin: 1px 0 0 0;
     border: 1px solid #fff;
     padding: 2px;
+    height: auto;
 }
 
 div#ezwt input.ezwt-input-image:hover, div#ezwt div.ezwt-actiongroup a:hover img
