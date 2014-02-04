@@ -1,3 +1,5 @@
+{if fetch( 'websitetoolbar', 'can_use', hash( 'class_id', $object.content_class.id ) )}
+
 {def $custom_templates = ezini( 'CustomTemplateSettings', 'CustomTemplateList', 'websitetoolbar.ini' )
      $include_in_view = ezini( 'CustomTemplateSettings', 'IncludeInView', 'websitetoolbar.ini' )}
 
@@ -71,3 +73,5 @@
 {include uri='design:parts/websitetoolbar/floating_toolbar.tpl'}
 
 <!-- eZ website toolbar: END -->
+
+{/if}
