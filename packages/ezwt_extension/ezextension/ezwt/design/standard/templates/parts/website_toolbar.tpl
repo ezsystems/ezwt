@@ -10,7 +10,7 @@
      $odf_import_access = fetch( 'user', 'has_access_to', hash( 'module', 'ezodf', 'function', 'import' ) )
      $odf_export_access = fetch( 'user', 'has_access_to', hash( 'module', 'ezodf', 'function', 'export' ) )
      $content_object_language_code = ''
-     $policies = fetch( 'user', 'user_role', hash( 'user_id', $current_user.contentobject_id ) )
+     $policies = fetch( 'user', 'user_role', hash( 'user_id', fetch( 'user', 'current_user' ).contentobject_id ) )
      $available_for_current_class = false()
      $custom_templates = ezini( 'CustomTemplateSettings', 'CustomTemplateList', 'websitetoolbar.ini' )
      $include_in_view = ezini( 'CustomTemplateSettings', 'IncludeInView', 'websitetoolbar.ini' )
