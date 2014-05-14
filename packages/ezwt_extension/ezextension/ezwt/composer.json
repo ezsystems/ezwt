@@ -1,5 +1,5 @@
 {
-    "name": "ezsystems/ezwt-extension",
+    "name": "ezsystems/ezwt-ls",
     "description": "eZ Publish Legacy website toolbar.",
     "type": "ezpublish-legacy-extension",
     "license": "GPL-2.0",
