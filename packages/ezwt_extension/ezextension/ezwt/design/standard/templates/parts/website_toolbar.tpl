@@ -48,7 +48,10 @@
 {include uri='design:parts/websitetoolbar/logo.tpl'}
 
 <form method="post" action={"content/action"|ezurl}>
-
+{if is_set($redirect_uri)}
+    <input type="hidden" name="RedirectURIAfterPublish" value="{$redirect_uri|wash}" />
+    <input type="hidden" name="RedirectIfDiscarded" value="{$redirect_uri|wash}" />
+{/if}
 {if and( $content_object.can_create, $is_container )}
 <div id="ezwt-creataction" class="ezwt-actiongroup">
 <label for="ezwt-create" class="hide">Create:</label>
