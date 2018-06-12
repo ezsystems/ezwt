@@ -11,7 +11,7 @@ Next, insert the following lines into your pagelayout.tpl file:
 
 {def $user_hash = concat( $current_user.role_id_list|implode( '_' ), '_', $current_user.limited_assignment_value_list|implode( '_' ) )}
  
-{cache-block keys=array( $uri_string, $user_hash )}
+{cache-block keys=array( $uri_string, $user_hash, $current_user.contentobject_id|eq( $pagedata.owner_id ) )}
 
     {include uri='design:parts/website_toolbar.tpl' current_node_id=$module_result.node_id}
 
