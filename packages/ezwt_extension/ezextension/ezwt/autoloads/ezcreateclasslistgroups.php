@@ -26,10 +26,6 @@
 
 class eZCreateClassListGroups
 {
-    function eZCreateClassListGroups()
-    {
-    }
-
     function operatorList()
     {
         return array( 'ezcreateclasslistgroups' );
